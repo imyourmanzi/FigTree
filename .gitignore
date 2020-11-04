@@ -1,0 +1,9 @@
+# keep custom types local
+type/*.*rc
+!type/simple.*rc
+
+# for now stop sharing ssh conf
+/core.ssh_config
+
+# don't need to upload resources
+/offline-res/
