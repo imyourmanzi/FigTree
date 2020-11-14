@@ -10,7 +10,7 @@
 _go="$HOME/Code/.go"
 
 # load core config
-. "$FIG_HOME/shell/core.zshrc"
+source "$FIG_HOME/shell/core.zshrc"
 
 
 #### swift ####

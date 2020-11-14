@@ -7,7 +7,7 @@
 
 #### FigTree ####
 # load OS config
-. "$FIG_HOME/os/$(uname -s | tr '[:upper:]' '[:lower:]').zshrc"
+source "$FIG_HOME/os/$(uname -s | tr '[:upper:]' '[:lower:]').zshrc"
 
 
 #### Oh My Zsh ####

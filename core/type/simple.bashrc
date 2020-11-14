@@ -7,4 +7,4 @@
 
 #### FigTree ####
 # load OS config
-. "$FIG_HOME/os/$(uname -s | tr '[:upper:]' '[:lower:]').bashrc"
+source "$FIG_HOME/os/$(uname -s | tr '[:upper:]' '[:lower:]').bashrc"

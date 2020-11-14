@@ -10,7 +10,7 @@
 _go="$HOME/Code/.go"
 
 # load core config
-. "$FIG_HOME/shell/core.bashrc"
+source "$FIG_HOME/shell/core.bashrc"
 
 
 #### bash ####
