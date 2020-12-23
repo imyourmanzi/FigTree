@@ -1,7 +1,2 @@
-# keep custom types local
-/core/type/*
-!/core/type/simple.*rc
-!/core/type/server.*rc
-
 # don't need to upload resources
 /offline-res/

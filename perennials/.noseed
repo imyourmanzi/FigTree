@@ -1,0 +1,16 @@
+# File: .noseed
+# Default .noseed file, which plants all perennial seeds.
+
+# macOS
+#darwin/root.bash_profile
+#terminal/FigTree Dark.terminal
+#iterm2/FigTree Dark.json
+
+# Git
+#git/core.gitconfig
+
+# SSH
+#ssh/root.ssh_config
+
+# Vim
+#vim/root.vimrc
