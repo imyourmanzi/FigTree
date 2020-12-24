@@ -1,2 +1,5 @@
-# don't need to upload resources
+# do not default include any amendments
+/annuals/amendments/*
+!/annuals/amendments/.gitkeep
+
 /offline-res/
