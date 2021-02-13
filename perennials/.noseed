@@ -1,16 +1,18 @@
 # File: .noseed
+# Author: Matt Manzi
+#
 # Default .noseed file, which plants all perennial seeds.
 
-# macOS
-#darwin/root.bash_profile
+# macOS perennials
+#darwin/provided.bash_profile
 #terminal/FigTree Dark.terminal
 #iterm2/FigTree Dark.json
 
-# Git
+# Git perennials
 #git/core.gitconfig
 
-# SSH
-#ssh/root.ssh_config
+# SSH perennials
+#ssh/provided.ssh_config
 
-# Vim
-#vim/root.vimrc
+# Vim perennials
+#vim/provided.vimrc
