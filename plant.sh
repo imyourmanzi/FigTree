@@ -30,10 +30,14 @@ NOSEED_FILE="$(ls -1 .noseed 2> /dev/null || ls -1 ./default.noseed 2> /dev/null
 
 
 # parse the .noseed file
-logDebug "Found noseed file: ${NOSEED_FILE}"
+[ -e "${NOSEED_FILE}" ] && \
+logDebug "Found noseed file: ${NOSEED_FILE}" && \
 while read -r line; do
     logDebug "Evaluating line|${line}"
+
+    # ignore lines
     if [[ "${line}" =~ ^\# ]] || [[ "${line}" =~ ^$ ]]; then
         logDebug "Ignoring commented/empty line"
     fi
-done < "${NOSEED_FILE}"
+done < "${NOSEED_FILE}" || \
+echo "${NOSEED_FILE}"
