@@ -1,0 +1,70 @@
+# File: default.noseed
+# Author: Matt Manzi
+# Date: 2021-02-13
+#
+# Default .noseed file, which plants all seeds but lists all provided seeds in
+# comments.
+
+
+#-------------------------------------------------------------------------------
+# Perennials
+
+# macOS perennials
+#perennials/darwin/provided.bash_profile
+#perennials/terminal/FigTree Dark.terminal
+#perennials/iterm2/FigTree Dark.json
+
+# Git perennials
+#perennials/git/core.gitconfig
+
+# SSH perennials
+#perennials/ssh/provided.ssh_config
+
+# Vim perennials
+#perennials/vim/provided.vimrc
+
+
+#-------------------------------------------------------------------------------
+# Annuals
+
+# Exit annuals
+#annuals/exit/exit.*rc
+
+# Go annuals
+#annuals/go/go.*rc
+
+# Shell history annuals
+#annuals/history/history.*rc
+
+# ip command annuals
+#annuals/ip/ip.*rc
+
+# ls command annuals
+#annuals/ls/ls.*rc
+
+# Meme command annuals
+#annuals/meme/meme.*rc
+
+# NVM command annuals
+#annuals/nvm/nvm.*rc
+
+# Oh My Zsh command annuals
+#annuals/oh-my-zsh/oh_my_zsh.*rc
+
+# Prompt annuals
+#annuals/prompt/prompt.*rc
+
+# pwd command annuals
+#annuals/pwd/pwd.*rc
+
+# AppleShowAllFiles command annuals
+#annuals/show-files/show_files.*rc
+
+# Swift annuals
+#annuals/swift/swift.*rc
+
+# up command annuals
+#annuals/up/up.*rc
+
+# Vim annuals
+#annuals/vim/vim.*rc
