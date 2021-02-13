@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 # File: plant.sh
 # Author: Matt Manzi
 # Date: 2020-11-14
