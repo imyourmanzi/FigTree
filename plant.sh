@@ -155,7 +155,7 @@ export CFG_HOME
 export CFG_SHELL
 export CFG_OS
 export CFG_TYPE
-. \"$CFG_HOME/type/$type$RC_BASH\"
+source \"$CFG_HOME/type/$type$RC_BASH\"
 
 # add device-specific configuration here
     "
