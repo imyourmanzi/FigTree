@@ -11,8 +11,14 @@
 # Plant perennials, prepare soil with amendments, and plant annuals into your
 # garden.
 
+function logTrace () {
+    if [ ! -z "${FIG_TRACE+true}" ]; then
+        echo "[TRAC] ${1}"
+    fi
+}
+
 function logDebug () {
-    if [ ! -z "${FIG_DEBUG+true}" ]; then
+    if [ ! -z "${FIG_DEBUG+true}" ] || [ ! -z "${FIG_TRACE+true}" ]; then
         echo "[DBUG] ${1}"
     fi
 }
@@ -26,18 +32,26 @@ function logWarn () {
 }
 
 #### Global Variables
-NOSEED_FILE="$(ls -1 .noseed 2> /dev/null || ls -1 ./default.noseed 2> /dev/null || logWarn 'Cannot find noseed file')"
+__NOSEED_FILE="$(ls -1 .noseed 2> /dev/null)"
+__noSeed=()
 
 
 # parse the .noseed file
-[ -e "${NOSEED_FILE}" ] && \
-logDebug "Found noseed file: ${NOSEED_FILE}" && \
+[ -e "${__NOSEED_FILE}" ] && \
+logDebug "Found noseed file: ${__NOSEED_FILE}" && \
 while read -r line; do
-    logDebug "Evaluating line|${line}"
+    logTrace "Evaluating line|${line}"
 
     # ignore lines
     if [[ "${line}" =~ ^\# ]] || [[ "${line}" =~ ^$ ]]; then
-        logDebug "Ignoring commented/empty line"
+        logTrace "Ignoring commented/empty line"
+        continue
     fi
-done < "${NOSEED_FILE}" || \
-echo "${NOSEED_FILE}"
+
+    # keep track of seeds to exclude
+    __cleanLine="$(echo \"${line}\" | xargs)"
+    __noSeed+=( "${__cleanLine}" )
+    logDebug "Will not plant: ${__cleanLine}"
+done < "${__NOSEED_FILE}" && \
+logDebug "All excluded seeds: ${__noSeed[*]}" || \
+logInfo "Did not find noseed file, planting all seeds"
