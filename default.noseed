@@ -15,10 +15,10 @@
 #perennials/iterm2/FigTree Dark.json
 
 # Git perennials
-#perennials/git/core.gitconfig
+#perennials/git/provided.gitconfig
 
 # SSH perennials
-#perennials/ssh/provided.ssh_config
+#perennials/ssh/provided.config
 
 # Vim perennials
 #perennials/vim/provided.vimrc
