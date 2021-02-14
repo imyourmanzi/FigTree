@@ -11,6 +11,9 @@
 # Plant perennials, prepare soil with amendments, and plant annuals into your
 # garden.
 
+
+#### Helper Functions
+
 function logTrace () {
     if [ ! -z "${FIG_TRACE+true}" ]; then
         echo "[TRAC] ${1}"
@@ -31,10 +34,14 @@ function logWarn () {
     echo "[WARN] ${1}"
 }
 
+
 #### Global Variables
+
 __NOSEED_FILE="$(ls -1 .noseed 2> /dev/null)"
 __noSeed=()
 
+
+#### Main Script
 
 # parse the .noseed file
 [ -e "${__NOSEED_FILE}" ] && \
@@ -55,3 +62,6 @@ while read -r line; do
 done < "${__NOSEED_FILE}" && \
 logDebug "All excluded seeds: ${__noSeed[*]}" || \
 logInfo "Did not find noseed file, planting all seeds"
+
+
+# plant perennials
