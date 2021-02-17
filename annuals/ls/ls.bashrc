@@ -10,7 +10,7 @@ alias la='ls -aFhl --color'
 alias l='ls -CF --color' || alias lk='ls -CF --color'
 
 # realias since macOS doesn't like --color (use -G instead)
-if [[ "$FIG_OS" == "$__figMacOS" ]]; then
+if [[ "$FIG_OS" == "$__FIG_MAC_OS" ]]; then
     alias ll='ls -FhlG'
     alias la='ls -aFhlG'
     alias l='ls -CFG'

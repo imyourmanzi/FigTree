@@ -5,7 +5,7 @@
 # Show or hide hidden files in GUI filesytem tools.
 
 # macOS Finder
-if [[ "$FIG_OS" == "$__figMacOS" ]]; then
+if [[ "$FIG_OS" == "$__FIG_MAC_OS" ]]; then
     _showFiles() {
         local action="$1"
         # show them by default

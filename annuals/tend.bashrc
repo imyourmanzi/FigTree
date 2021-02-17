@@ -14,10 +14,8 @@ if [[ -z "${FIG_HOME+..}" ]]; then
     exit 1
 fi
 
-FIG_RC=".bashrc"
-FIG_OS="$(uname -s | tr '[:upper:]' '[:lower:]')"
-__figMacOS="darwin"
-__figLinux="linux"
+source "${FIG_HOME}/tool-shed/globals.bash"
+
 alias fig='cd $FIG_HOME'
 
 # plant annuals in the garden

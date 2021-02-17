@@ -21,7 +21,6 @@ source "${FIG_HOME}/tool-shed/parse_noseed.bash"
 
 
 #### Globals
-__BED_FILENAME="bed.sh"
 
 
 #### Main Script
@@ -36,7 +35,7 @@ for perennial in "${__perennialsDir}"/*; do
 
     if [[ ! " ${__noSeed[@]} " =~ " ${perennial}".*" " ]]; then
         logTrace "Planting perennial: ${perennial}"
-        # "${perennial}/${__BED_FILENAME}"
+        "${perennial}"/*".bash"
     else
         logDebug "Skipping perennial: ${perennial}"
     fi
