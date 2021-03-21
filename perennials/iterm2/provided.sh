@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# File: iterm2/provided.bash
+# File: iterm2/provided.sh
 # Author: Matt Manzi
 # Date: 2021-02-16
 #

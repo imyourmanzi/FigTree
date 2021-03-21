@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# File: terminal/provided.bash
+# File: terminal/provided.sh
 # Author: Matt Manzi
 # Date: 2021-02-16
 #

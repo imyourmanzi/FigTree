@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 # File: darwin/provided.bash
 # Author: Matt Manzi
 # Date: 2021-02-16
