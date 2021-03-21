@@ -20,22 +20,17 @@ source "${FIG_HOME}/tool-shed/globals.bash"
 
 function linkSafely () {
     logDebug "Planting ${__SOURCE_FILE} into ${__INSTALL_TARGET}"
-
-    # replace bash_profile on macOS
-    if [ "$FIG_OS" != "$__FIG_MAC_OS" ]; then
-        logDebug "Current system is not macOS"
-        return
-    fi
     
-    # check if a profile is already linked and handle
+    # check if a file is already linked and handle
     if [ "${__INSTALL_TARGET}" -ef "${__SOURCE_FILE}" ]; then
-        logDebug "Roots exists, no further action needed"
+        logDebug "Perennial roots exists, no further action needed"
         return
     fi
+    logTrace "Perennial not currently planted"
 
-    # check that it's not a link to just the wrong file
-    if [ ! -L "${__INSTALL_TARGET}" ]; then
-        logWarn "Found existing file, backing up before overwrite"
+    # check if there is a file there already
+    if [ -e "${__INSTALL_TARGET}" ]; then
+        logInfo "Found existing file, backing up before overwrite"
         mv "${__INSTALL_TARGET}" "${__INSTALL_TARGET}.bak"
     fi
 
