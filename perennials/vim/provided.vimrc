@@ -1,4 +1,4 @@
-" File: core.vimrc
+" File: provided.vimrc
 " Author: Matt Manzi
 " Date: 2018
 "
