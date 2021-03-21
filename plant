@@ -34,7 +34,7 @@ for perennial in "${__perennialsDir}"/*; do
     logTrace "Evaluating perennial: ${perennial}"
 
     if [[ ! " ${__noSeed[@]} " =~ " ${perennial}".*" " ]]; then
-        logTrace "Planting perennial: ${perennial}"
+        logInfo "Planting perennial: ${perennial}"
         "${perennial}"/*".bash"
     else
         logDebug "Skipping perennial: ${perennial}"
