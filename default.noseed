@@ -12,7 +12,7 @@
 # macOS perennials
 #perennials/darwin/provided.bash_profile
 #perennials/terminal/FigTree Dark.terminal
-#perennials/iterm2/FigTree Dark.json
+#perennials/iterm2/provided.json
 
 # Git perennials
 #perennials/git/provided.gitconfig
