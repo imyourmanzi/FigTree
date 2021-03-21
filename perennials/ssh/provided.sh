@@ -22,21 +22,10 @@ source "${FIG_HOME}/tool-shed/linker.bash"
 #### Globals
 __INSTALL_TARGET="${HOME}/.ssh/config"
 __PERENNIAL_DIR="perennials/ssh"
-__providedFile="${FIG_HOME}/${__PERENNIAL_DIR}/provided.config"
-__SOURCE_FILE="${FIG_HOME}/${__PERENNIAL_DIR}/provided.grown.config"
+__SOURCE_FILE="${FIG_HOME}/${__PERENNIAL_DIR}/provided.config"
 
 
 #### Main Script
-
-rm -f "${__SOURCE_FILE}"
-
-# preserve the original SSH config if it exists
-if [ -e "${__INSTALL_TARGET}" ] && [ ! "${__INSTALL_TARGET}" -ef "${__SOURCE_FILE}" ]; then
-    logInfo "Provided SSH config will be appended to existing config"
-    cat "${__INSTALL_TARGET}" > "${__SOURCE_FILE}"
-    echo >> "${__SOURCE_FILE}"
-fi
-cat "${__providedFile}" >> "${__SOURCE_FILE}"
 
 logDebug "Planting perennial: ${__PERENNIAL_DIR}"
 logTrace "Install target: ${__INSTALL_TARGET}"

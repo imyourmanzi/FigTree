@@ -22,20 +22,10 @@ source "${FIG_HOME}/tool-shed/linker.bash"
 #### Globals
 __INSTALL_TARGET="${HOME}/.bash_profile"
 __PERENNIAL_DIR="perennials/darwin"
-__providedFile="${FIG_HOME}/${__PERENNIAL_DIR}/provided.bash_profile"
-__SOURCE_FILE="${FIG_HOME}/${__PERENNIAL_DIR}/provided.grown.bash_profile"
+__SOURCE_FILE="${FIG_HOME}/${__PERENNIAL_DIR}/provided.bash_profile"
 
 
 #### Main Script
-
-rm -f "${__SOURCE_FILE}"
-
-# preserve the original gitconfig if it exists
-if [ -e "${__INSTALL_TARGET}" ] && [ ! "${__INSTALL_TARGET}" -ef "${__SOURCE_FILE}" ]; then
-    logInfo "Provided bash_profile will be appended to existing bash_profile"
-    cat "${__INSTALL_TARGET}" > "${__SOURCE_FILE}"
-fi
-tail +6 "${__providedFile}" >> "${__SOURCE_FILE}"
 
 logDebug "Planting perennial: ${__PERENNIAL_DIR}"
 logTrace "Install target: ${__INSTALL_TARGET}"
