@@ -16,7 +16,6 @@ if [[ -z "${FIG_HOME+x}" ]]; then
 fi
 
 source "${FIG_HOME}/tool-shed/logger.bash"
-source "${FIG_HOME}/tool-shed/globals.bash"
 
 function linkSafely () {
     logDebug "Linking ${__INSTALL_TARGET} to ${__SOURCE_FILE}"
