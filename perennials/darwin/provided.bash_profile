@@ -1,4 +1,4 @@
-# File: darwin.bash_profile
+# File: darwin/provided.bash_profile
 # Author: Matt Manzi
 # Date: 2019-01-03
 #
