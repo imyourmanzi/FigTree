@@ -22,7 +22,7 @@ source "${FIG_HOME}/tool-shed/linker.bash"
 __INSTALL_TARGET="${HOME}/.gitconfig"
 __PERENNIAL_DIR="perennials/git"
 __providedFile="${FIG_HOME}/${__PERENNIAL_DIR}/provided.gitconfig"
-__SOURCE_FILE="${FIG_HOME}/${__PERENNIAL_DIR}/provided.full.gitconfig"
+__SOURCE_FILE="${FIG_HOME}/${__PERENNIAL_DIR}/provided.grown.gitconfig"
 
 
 #### Main Script
