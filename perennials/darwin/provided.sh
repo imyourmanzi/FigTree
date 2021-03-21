@@ -35,7 +35,7 @@ if [ -e "${__INSTALL_TARGET}" ] && [ ! "${__INSTALL_TARGET}" -ef "${__SOURCE_FIL
     logInfo "Provided bash_profile will be appended to existing bash_profile"
     cat "${__INSTALL_TARGET}" > "${__SOURCE_FILE}"
 fi
-tail +5 "${__providedFile}" >> "${__SOURCE_FILE}"
+tail +6 "${__providedFile}" >> "${__SOURCE_FILE}"
 
 logDebug "Planting perennial: ${__PERENNIAL_DIR}"
 logTrace "Install target: ${__INSTALL_TARGET}"
