@@ -35,7 +35,7 @@ for perennial in "${__perennialsDir}"/*; do
 
     if [[ ! " ${__noSeed[@]} " =~ " ${perennial}".*" " ]]; then
         logInfo "Planting perennial: ${perennial}"
-        "${perennial}"/*".bash"
+        "${perennial}"/*".sh"
     else
         logDebug "Skipping perennial: ${perennial}"
     fi
