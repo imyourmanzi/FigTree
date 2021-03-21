@@ -1,5 +1,5 @@
-#!/usr/bin/env sh
-# File: darwin/provided.bash
+#!/usr/bin/env bash
+# File: darwin/provided.sh
 # Author: Matt Manzi
 # Date: 2021-02-16
 #
