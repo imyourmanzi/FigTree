@@ -1,9 +1,7 @@
-# File: iterm2/provided.bash
+#!/usr/bin/env bash
+# File: git/provided.bash
 # Author: Matt Manzi
 # Date: 2021-02-16
-#
-# Utilizes iTerm2's Dynamic Profiles feature:
-# https://iterm2.com/documentation-dynamic-profiles.html
 #
 # Prerequisites:
 # - FIG_HOME is set to the Fig Tree project directory.
@@ -22,12 +20,22 @@ source "${FIG_HOME}/tool-shed/linker.bash"
 
 
 #### Globals
-__INSTALL_TARGET="${HOME}/Library/Application Support/iTerm2/DynamicProfiles/fig_tree.json"
-__PERENNIAL_DIR="perennials/iterm2"
-__SOURCE_FILE="${FIG_HOME}/${__PERENNIAL_DIR}/provided.json"
+__INSTALL_TARGET="${HOME}/.gitconfig"
+__PERENNIAL_DIR="perennials/git"
+__providedFile="${FIG_HOME}/${__PERENNIAL_DIR}/provided.gitconfig"
+__SOURCE_FILE="${FIG_HOME}/${__PERENNIAL_DIR}/provided.grown.gitconfig"
 
 
 #### Main Script
+
+rm -f "${__SOURCE_FILE}"
+
+# preserve the original gitconfig if it exists
+if [ -e "${__INSTALL_TARGET}" ] && [ ! "${__INSTALL_TARGET}" -ef "${__SOURCE_FILE}" ]; then
+    logInfo "Provided Git config will be appended to existing config"
+    cat "${__INSTALL_TARGET}" > "${__SOURCE_FILE}"
+fi
+tail +4 "${__providedFile}" >> "${__SOURCE_FILE}"
 
 logDebug "Planting perennial: ${__PERENNIAL_DIR}"
 logTrace "Install target: ${__INSTALL_TARGET}"

@@ -1,10 +1,13 @@
-# File: darwin/provided.bash
+#!/usr/bin/env bash
+# File: iterm2/provided.bash
 # Author: Matt Manzi
 # Date: 2021-02-16
 #
+# Utilizes iTerm2's Dynamic Profiles feature:
+# https://iterm2.com/documentation-dynamic-profiles.html
+#
 # Prerequisites:
 # - FIG_HOME is set to the Fig Tree project directory.
-# - FIG_OS is set to __FIG_MAC_OS.
 
 if [[ -z "${FIG_HOME+x}" ]]; then
     echo -ne "\033[38;5;160m"
@@ -14,21 +17,15 @@ if [[ -z "${FIG_HOME+x}" ]]; then
     exit 1
 fi
 
-# check OS
-if [ "$FIG_OS" != "$__FIG_MAC_OS" ]; then
-    logDebug "Current system is ${FIG_OS}, not macOS, cannot plant darwin"
-    return
-fi
-
 #### Includes
 source "${FIG_HOME}/tool-shed/logger.bash"
 source "${FIG_HOME}/tool-shed/linker.bash"
 
 
 #### Globals
-__INSTALL_TARGET="${HOME}/.bash_profile"
-__PERENNIAL_DIR="perennials/darwin"
-__SOURCE_FILE="${FIG_HOME}/${__PERENNIAL_DIR}/provided.bash_profile"
+__INSTALL_TARGET="${HOME}/Library/Application Support/iTerm2/DynamicProfiles/fig_tree.json"
+__PERENNIAL_DIR="perennials/iterm2"
+__SOURCE_FILE="${FIG_HOME}/${__PERENNIAL_DIR}/provided.json"
 
 
 #### Main Script

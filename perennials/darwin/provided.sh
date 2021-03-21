@@ -1,9 +1,12 @@
-# File: git/provided.bash
+#!/usr/bin/env bash
+# File: darwin/provided.bash
 # Author: Matt Manzi
 # Date: 2021-02-16
 #
 # Prerequisites:
 # - FIG_HOME is set to the Fig Tree project directory.
+# - FIG_OS is set to __FIG_MAC_OS.
+
 
 if [[ -z "${FIG_HOME+x}" ]]; then
     echo -ne "\033[38;5;160m"
@@ -13,16 +16,22 @@ if [[ -z "${FIG_HOME+x}" ]]; then
     exit 1
 fi
 
+# check OS
+if [ "${FIG_OS}" != "${__FIG_MAC_OS}" ]; then
+    logDebug "Current system is ${FIG_OS}, cannot plant darwin"
+    return
+fi
+
 #### Includes
 source "${FIG_HOME}/tool-shed/logger.bash"
 source "${FIG_HOME}/tool-shed/linker.bash"
 
 
 #### Globals
-__INSTALL_TARGET="${HOME}/.gitconfig"
-__PERENNIAL_DIR="perennials/git"
-__providedFile="${FIG_HOME}/${__PERENNIAL_DIR}/provided.gitconfig"
-__SOURCE_FILE="${FIG_HOME}/${__PERENNIAL_DIR}/provided.grown.gitconfig"
+__INSTALL_TARGET="${HOME}/.bash_profile"
+__PERENNIAL_DIR="perennials/darwin"
+__providedFile="${FIG_HOME}/${__PERENNIAL_DIR}/provided.bash_profile"
+__SOURCE_FILE="${FIG_HOME}/${__PERENNIAL_DIR}/provided.grown.bash_profile"
 
 
 #### Main Script
@@ -31,10 +40,10 @@ rm -f "${__SOURCE_FILE}"
 
 # preserve the original gitconfig if it exists
 if [ -e "${__INSTALL_TARGET}" ] && [ ! "${__INSTALL_TARGET}" -ef "${__SOURCE_FILE}" ]; then
-    logInfo "Provided Git config will be appended to existing config"
+    logInfo "Provided bash_profile will be appended to existing bash_profile"
     cat "${__INSTALL_TARGET}" > "${__SOURCE_FILE}"
 fi
-tail +4 "${__providedFile}" >> "${__SOURCE_FILE}"
+tail +5 "${__providedFile}" >> "${__SOURCE_FILE}"
 
 logDebug "Planting perennial: ${__PERENNIAL_DIR}"
 logTrace "Install target: ${__INSTALL_TARGET}"

@@ -1,4 +1,5 @@
-# File: ssh/provided.bash
+#!/usr/bin/env bash
+# File: vim/provided.bash
 # Author: Matt Manzi
 # Date: 2021-02-16
 #
@@ -7,10 +8,10 @@
 
 if [[ -z "${FIG_HOME+x}" ]]; then
     echo -ne "\033[38;5;160m"
-    echo -e "[FATL] FIG_HOME variable not set!  Check that is being defined."
+    echo -e "[FATL] FIG_HOME variable not set!  Check that it is being defined."
     echo -e "\033[0m"
     read -p "Shell will exit on <return>"
     exit 1
 fi
 
-INSTALL_TARGET="${HOME}/.ssh/config"
+INSTALL_TARGET="${HOME}/.vimrc"
