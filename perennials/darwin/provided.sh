@@ -5,8 +5,6 @@
 #
 # Prerequisites:
 # - FIG_HOME is set to the Fig Tree project directory.
-# - FIG_OS is set to __FIG_MAC_OS.
-
 
 if [[ -z "${FIG_HOME+x}" ]]; then
     echo -ne "\033[38;5;160m"
@@ -14,12 +12,6 @@ if [[ -z "${FIG_HOME+x}" ]]; then
     echo -e "\033[0m"
     read -p "Shell will exit on <return>"
     exit 1
-fi
-
-# check OS
-if [ "${FIG_OS}" != "${__FIG_MAC_OS}" ]; then
-    logDebug "Current system is ${FIG_OS}, cannot plant darwin"
-    return
 fi
 
 #### Includes
