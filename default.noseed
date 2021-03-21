@@ -10,7 +10,11 @@
 # Perennials
 
 # macOS perennials
+
+## this perennial's functionality is needed for using Fig Tree in bash shells
 #perennials/darwin/provided.bash_profile
+
+## terminal emulators
 #perennials/terminal/FigTree Dark.terminal
 #perennials/iterm2/provided.json
 
