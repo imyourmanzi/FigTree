@@ -20,6 +20,7 @@ __NOSEED_FILE="${FIG_HOME}/.noseed"
 __noSeed=()
 
 function parseNoseedFile () {
+    logTrace "================Begin Parse noseed File================"
     local cleanLine
 
     logTrace "Checking noseed path: ${__NOSEED_FILE}"
@@ -42,4 +43,6 @@ function parseNoseedFile () {
     done < "${__NOSEED_FILE}" && \
     logDebug "All excluded seeds: ${__noSeed[*]}" || \
     logInfo "Did not find noseed file, planting all seeds"
+
+    logTrace "=================End Parse noseed File================="
 }
