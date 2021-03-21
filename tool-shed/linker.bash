@@ -19,22 +19,21 @@ source "${FIG_HOME}/tool-shed/logger.bash"
 source "${FIG_HOME}/tool-shed/globals.bash"
 
 function linkSafely () {
-    logDebug "Planting ${__SOURCE_FILE} into ${__INSTALL_TARGET}"
+    logDebug "Linking ${__INSTALL_TARGET} to ${__SOURCE_FILE}"
     
     # check if a file is already linked and handle
     if [ "${__INSTALL_TARGET}" -ef "${__SOURCE_FILE}" ]; then
-        logDebug "Perennial roots exists, no further action needed"
+        logDebug "Correct link exists, no further action needed"
         return
     fi
-    logTrace "Perennial not currently planted"
+    logTrace "File not currently linked"
 
     # check if there is a file there already
     if [ -e "${__INSTALL_TARGET}" ]; then
-        logInfo "Found existing file, backing up before overwrite"
+        logInfo "Found existing file, backing up before linking"
         mv "${__INSTALL_TARGET}" "${__INSTALL_TARGET}.bak"
     fi
 
     # link Fig Tree file to target location
-    logDebug "Linking new ${__INSTALL_TARGET}"
     ln -s "${__SOURCE_FILE}" "${__INSTALL_TARGET}"
 }
