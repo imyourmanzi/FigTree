@@ -7,7 +7,7 @@
 
 if [[ -z "${FIG_HOME+x}" ]]; then
     echo -ne "\033[38;5;160m"
-    echo -e "[FATL] FIG_HOME variable not set!  Check that is being defined."
+    echo -e "[FATL] FIG_HOME variable not set!  Check that it is being defined."
     echo -e "\033[0m"
     read -p "Shell will exit on <return>"
     exit 1
