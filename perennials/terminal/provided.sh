@@ -21,7 +21,7 @@ source "${FIG_HOME}/tool-shed/logger.bash"
 
 
 #### Globals
-__PERENNIAL_DIR="perennials/ssh"
+__PERENNIAL_DIR="perennials/terminal"
 __SOURCE_FILE="${FIG_HOME}/${__PERENNIAL_DIR}/Fig Tree Dark.terminal"
 
 
