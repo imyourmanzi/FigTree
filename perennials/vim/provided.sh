@@ -14,4 +14,21 @@ if [[ -z "${FIG_HOME+x}" ]]; then
     exit 1
 fi
 
-INSTALL_TARGET="${HOME}/.vimrc"
+#### Includes
+source "${FIG_HOME}/tool-shed/logger.bash"
+source "${FIG_HOME}/tool-shed/linker.bash"
+
+
+#### Globals
+__INSTALL_TARGET="${HOME}/.vimrc"
+__PERENNIAL_DIR="perennials/vim"
+__SOURCE_FILE="${FIG_HOME}/${__PERENNIAL_DIR}/provided.vimrc"
+
+
+#### Main Script
+
+logDebug "Planting perennial: ${__PERENNIAL_DIR}"
+logTrace "Install target: ${__INSTALL_TARGET}"
+logTrace "Source file: ${__SOURCE_FILE}"
+
+linkSafely

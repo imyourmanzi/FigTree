@@ -5,14 +5,14 @@
 " Inspired by the example at http://vim.wikia.com/wiki/Example_vimrc written by
 " http://vim.wikia.com/wiki/Vim_on_Freenode
 
-" This is highly recommended by the original author.  Maybe I'll understand it
-" one day.
-set nocompatible
+" https://vi.stackexchange.com/a/25159
+if &compatible
+    set nocompatible
+endif
 
 " Let Vim try to figure out the file type based on the contents of the file
 " and turn on auto-indenting
 filetype indent on
-
 
 "-----------------------------------------------------------------------------+
 " Presentation and Visual                                                     |
