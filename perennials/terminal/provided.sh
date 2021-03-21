@@ -3,7 +3,10 @@
 # Author: Matt Manzi
 # Date: 2021-02-16
 #
-# macOS wants to deal with plists only and I'm feeling lazy.
+# macOS wants to deal with plists only and I'm feeling lazy.  This perennial
+# will not be linked back to FIG_HOME and so it will re-plant every time.  The
+# only side effect of this is that Terminal will run every time ./plant is run,
+# unless the terminal perennial is excluded using the noseed file.
 #
 # Prerequisites:
 # - FIG_HOME is set to the Fig Tree project directory.
