@@ -1,5 +1,4 @@
-# do not default include any amendments
-/annuals/amendments/*
-!/annuals/amendments/.gitkeep
-
 /offline-res/
+
+# fully-built git config is generated when planting
+/perennials/git/provided.full.gitconfig
