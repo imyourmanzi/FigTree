@@ -35,6 +35,8 @@ for perennial in "${__perennialsDir}"/*; do
 
     if [[ ! " ${__noSeed[@]} " =~ " ${perennial}".*" " ]]; then
         logInfo "Planting perennial: ${perennial}"
+        
+        # provided.sh are the template file names but this will plant any script file
         "${perennial}"/*".sh"
     else
         logDebug "Skipping perennial: ${perennial}"
