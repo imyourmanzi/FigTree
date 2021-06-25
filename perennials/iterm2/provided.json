@@ -258,7 +258,7 @@
         "Blue Component": 1
       },
       "Window Type": 0,
-      "Send New Output Alert" : true,
+      "Send New Output Alert" : false,
       "Use Bright Bold": true,
       "Send Bell Alert" : false,
       "Has Hotkey": false,
