@@ -27,6 +27,11 @@
 # Vim perennials
 #perennials/vim/provided.vimrc
 
+# Zsh perennials
+
+## compinit
+#perennials/zsh-compinit
+
 
 #-------------------------------------------------------------------------------
 # Annuals
