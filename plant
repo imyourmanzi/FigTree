@@ -21,7 +21,6 @@ source "${FIG_HOME}/tool-shed/parse_noseed.bash"
 
 
 #### Globals
-__BED_FILENAME="bed.sh"
 
 
 #### Main Script
@@ -35,9 +34,18 @@ for perennial in "${__perennialsDir}"/*; do
     logTrace "Evaluating perennial: ${perennial}"
 
     if [[ ! " ${__noSeed[@]} " =~ " ${perennial}".*" " ]]; then
-        logTrace "Planting perennial: ${perennial}"
-        # "${perennial}/${__BED_FILENAME}"
+        logInfo "Planting perennial: ${perennial}"
+        
+        # provided.sh are the template file names but this will plant any script file
+        "${perennial}"/*".sh"
     else
         logDebug "Skipping perennial: ${perennial}"
     fi
 done
+
+# install the tend script
+logInfo "Installing tend script for bash"
+echo "source \"${FIG_HOME}/annuals/tend.bash\"" >> "${HOME}/.bashrc"
+
+logInfo "Installing tend script for zsh"
+echo "source \"${FIG_HOME}/annuals/tend.zsh\"" >> "${HOME}/.zshrc"

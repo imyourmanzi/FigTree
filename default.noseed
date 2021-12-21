@@ -10,9 +10,13 @@
 # Perennials
 
 # macOS perennials
+
+## this perennial's functionality is needed for using Fig Tree in bash shells
 #perennials/darwin/provided.bash_profile
-#perennials/terminal/FigTree Dark.terminal
-#perennials/iterm2/FigTree Dark.json
+
+## terminal emulators
+#perennials/terminal/Fig Tree Dark.terminal
+#perennials/iterm2/provided.json
 
 # Git perennials
 #perennials/git/provided.gitconfig
@@ -22,6 +26,11 @@
 
 # Vim perennials
 #perennials/vim/provided.vimrc
+
+# Zsh perennials
+
+## compinit
+#perennials/zsh-compinit
 
 
 #-------------------------------------------------------------------------------

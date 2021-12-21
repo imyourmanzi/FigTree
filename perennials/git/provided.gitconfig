@@ -1,4 +1,4 @@
-# File: root.gitconfig
+# File: git/provided.gitconfig
 # Author: Matt Manzi
 # Date: 2021-02-13
 
@@ -6,6 +6,7 @@
     a = add
     ck = checkout
     ci = commit
+    cia = commit -a
     st = status
     br = branch
     f = fetch
