@@ -26,6 +26,10 @@ source "${FIG_HOME}/tool-shed/linker.bash"
 __PERENNIAL_DIR="perennials/xcode"
 
 targetDirectory="${HOME}/Library/Developer/Xcode/UserData/FontAndColorThemes/"
+
+logTrace "Creating Xcode themes directory in case it doesn't exist (${targetDirectory})"
+mkdir -p "$targetDirectory"
+
 for sourceFile in "${FIG_HOME}/${__PERENNIAL_DIR}"/*.xccolortheme; do
     
     #### Globals, the rest
