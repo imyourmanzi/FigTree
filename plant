@@ -43,4 +43,9 @@ for perennial in "${__perennialsDir}"/*; do
     fi
 done
 
-# TODO: install the tend script
+# install the tend script
+logInfo "Installing tend script for bash"
+echo "source \"${FIG_HOME}/annuals/tend.bash\"" >> "${HOME}/.bashrc"
+
+logInfo "Installing tend script for zsh"
+echo "source \"${FIG_HOME}/annuals/tend.zsh\"" >> "${HOME}/.zshrc"
