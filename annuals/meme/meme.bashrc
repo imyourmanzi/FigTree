@@ -4,5 +4,5 @@
 #
 # Have some memes, my dude.
 
-alias kk='cat $FIG_HOME/annuals/amendments/meme/yes.txt'
-alias imdone='cat $FIG_HOME/annuals/amendments/meme/donedog.txt'
+alias kk='cat $FIG_HOME/annuals/meme/yes.txt'
+alias imdone='cat $FIG_HOME/annuals/meme/donedog.txt'
