@@ -6,13 +6,10 @@
 export ZSH=$HOME/.oh-my-zsh
 
 # zsh theme basics
-ZSH_THEME_RANDOM_CANDIDATES=${ZSH_THEME_RANDOM_CANDIDATES:=(
-    "miloshadzic"
-    "mortalscumbag"
-    "muse"
-    "smt"
-    "af-magic"
-)}
+declare -a ZSH_THEME_RANDOM_CANDIDATES=("miloshadzic" "mortalscumbag" "muse" "smt" "af-magic")
+if (( ${+OMZ_THEME_RANDOM_CANDIDATES} )); then
+    ZSH_THEME_RANDOM_CANDIDATES=(${OMZ_THEME_RANDOM_CANDIDATES[@]})
+fi
 
 ZSH_THEME=${ZSH_THEME:="random"}
 
