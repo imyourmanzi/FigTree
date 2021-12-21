@@ -20,9 +20,19 @@ A command line configuration utility to ensure a consistent experience across ev
 
 #### `nvm`
 
+For your **.zshrc** file:
+
+```shell
+# use this string to change the Node version placeholder for pre-NVM init
+# (note: escape sequences may not be supported by your theme)
+#DEFAULT_NVM_CURRENT=""
+# use this array to add to the default list of commands that require Node
+#INIT_NVM_COMMANDS=('mynospacecommand')
+```
+
 #### Oh My Zsh
 
-In **.zshrc**, `OMZ_PLUGINS` should be set before the `source ...` line for FigTree.
+In **.zshrc**, all Oh My Zsh configuration variables should be set before the `source ...` line for FigTree. Use `OMZ_PLUGINS` for the `plugins` variable.
 
 #### `persist`
 
