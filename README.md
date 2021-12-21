@@ -22,6 +22,8 @@ A command line configuration utility to ensure a consistent experience across ev
 
 #### Oh My Zsh
 
+In **.zshrc**, `OMZ_PLUGINS` should be set before the `source ...` line for FigTree.
+
 #### `persist`
 
 #### Shell Prompt
