@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 # File: xcode/provided.sh
 # Author: Matt Manzi
-# Date: 2021-02-16
+# Date: 2021-12-20
 #
 # Adds custom themes to Xcode.
 #
 # Prerequisites:
 # - FIG_HOME is set to the Fig Tree project directory.
+#
+# OS Supported: macOS
 
 if [[ -z "${FIG_HOME+x}" ]]; then
     echo -ne "\033[38;5;160m"
