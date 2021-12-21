@@ -33,6 +33,7 @@ For your **.zshrc** file:
 #### Oh My Zsh
 
 In **.zshrc**, all Oh My Zsh configuration variables should be set before the `source ...` line for FigTree. Use `OMZ_PLUGINS` for the `plugins` variable.
+Use `OMZ_THEME_RANDOM_CANDIDATES` for the `ZSH_THEME_RANDOM_CANDIDATES` variable.
 
 #### `persist`
 
