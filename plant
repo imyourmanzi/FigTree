@@ -45,7 +45,11 @@ done
 
 # install the tend script
 logInfo "Installing tend script for bash"
-echo "source \"${FIG_HOME}/annuals/tend.bashrc\"" >> "${HOME}/.bashrc"
+echo "export FIG_HOME=\"$( cd \"$( dirname \"${BASH_SOURCE[0]}\" )\" && pwd )\"
+source \"${FIG_HOME}/annuals/tend.bashrc\"" >> "${HOME}/.bashrc
+"
 
 logInfo "Installing tend script for zsh"
-echo "source \"${FIG_HOME}/annuals/tend.zshrc\"" >> "${HOME}/.zshrc"
+echo "export FIG_HOME=\"$( cd \"$( dirname \"${BASH_SOURCE[0]}\" )\" && pwd )\"
+source \"${FIG_HOME}/annuals/tend.zshrc\"" >> "${HOME}/.zshrc
+"
