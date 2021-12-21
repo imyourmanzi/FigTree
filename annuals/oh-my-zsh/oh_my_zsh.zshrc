@@ -5,8 +5,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-${name:=word}
-
 # zsh theme basics
 ZSH_THEME_RANDOM_CANDIDATES=${ZSH_THEME_RANDOM_CANDIDATES:=(
     "miloshadzic"
@@ -15,6 +13,8 @@ ZSH_THEME_RANDOM_CANDIDATES=${ZSH_THEME_RANDOM_CANDIDATES:=(
     "smt"
     "af-magic"
 )}
+
+ZSH_THEME=${ZSH_THEME:="random"}
 
 # history timestamps
 HIST_STAMPS=${HIST_STAMPS:="%m/%d/%y %T "}
@@ -28,7 +28,7 @@ HYPHEN_INSENSITIVE=${HYPHEN_INSENSITIVE:="true"}
 DISABLE_UNTRACKED_FILES_DIRTY=${DISABLE_UNTRACKED_FILES_DIRTY:="true"}
 
 # load a few of your favorite plugins
-plugins=${OMZ_PLUGINS:=(git)}
+plugins=${OMZ_PLUGINS:="git"}
 
 # start up omz
 source $ZSH/oh-my-zsh.sh
