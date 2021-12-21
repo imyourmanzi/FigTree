@@ -79,5 +79,5 @@ whence __init_nvm > /dev/null || if [ -s "$HOME/.nvm/nvm.sh" ]; then
     function __nvm_init_alias() {
         whence __init_nvm > /dev/null && __init_nvm $@ || $@
     }
-    for i in "${__node_commands[@]}"; do echo "making $i"; alias $i='__nvm_init_alias '$i; done
+    for i in "${__node_commands[@]}"; do alias $i='__nvm_init_alias '$i; done
 fi
