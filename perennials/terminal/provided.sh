@@ -32,7 +32,7 @@ __SOURCE_FILE="${FIG_HOME}/${__PERENNIAL_DIR}/Fig Tree Dark.terminal"
 
 logDebug "Planting perennial: ${__PERENNIAL_DIR}"
 logTrace "Source file: ${__SOURCE_FILE}"
-logInfo "Terminal will launch shortly (if it is not running already) and a new window will open.  It can be closed at any time."
+logWarn "Terminal will launch shortly (if it is not running already) and a new window will open.  It can be closed at any time."
 sleep 1
 
 open "${__SOURCE_FILE}"

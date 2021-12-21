@@ -40,7 +40,10 @@ __SOURCE_FILE="${FIG_HOME}/${__PERENNIAL_DIR}/provided.plist"
 # launchctl enable "user/${UID}/$(basename ${__INSTALL_TARGET} .plist)"
 
 # doesn't work properly with links at the moment
-logWarn "In a new terminal,"
-logWarn "please manually copy $__SOURCE_FILE to $__INSTALL_TARGET then run the following:"
+logWarn "In a new terminal, please manually copy"
+logWarn "  $__SOURCE_FILE"
+logWarn " to"
+logWarn "  $__INSTALL_TARGET"
+logWarn "then run the following:"
 logWarn "launchctl enable \"user/${UID}/$(basename ${__INSTALL_TARGET} .plist)\""
 sleep 5 && read -p "Press enter when ready to continue with setup"
