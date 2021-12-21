@@ -48,6 +48,8 @@ _May prompt you for input_
 
 #### Rectangle
 
+_Requires manual intervention_
+
 #### SSH
 
 #### macOS Terminal
