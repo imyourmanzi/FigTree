@@ -31,4 +31,22 @@ logDebug "Planting perennial: ${__PERENNIAL_DIR}"
 logTrace "Install target: ${__INSTALL_TARGET}"
 logTrace "Source file: ${__SOURCE_FILE}"
 
+gitUserName="$(git config --global --get user.name)"
+if [ -z "$gitUserName" ]; then
+    read -p "What name do you want to use for git? " gitUserName
+fi
+
+gitUserEmail="$(git config --global --get user.email)"
+if [ -z "$gitUserEmail" ]; then
+    read -p "What email do you want to use for git? " gitUserEmail
+fi
+
+cp "$__SOURCE_FILE" "${__SOURCE_FILE}.grown"
+__SOURCE_FILE="${__SOURCE_FILE}.grown"
+
+echo "[user]
+    name = $gitUserName
+    email = $gitUserEmail
+" > "$__SOURCE_FILE"
+
 linkSafely

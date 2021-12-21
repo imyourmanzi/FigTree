@@ -7,4 +7,4 @@
 
 # pre-grown perennials are generated when planting and are based off of the
 # provided perennial and any existing configuration that may conflict with it
-/perennials/*/provided.grown*
+/perennials/*/provided.*.grown
