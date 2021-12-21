@@ -47,6 +47,6 @@ __SOURCE_FILE="${__SOURCE_FILE}.grown"
 echo "[user]
     name = $gitUserName
     email = $gitUserEmail
-" > "$__SOURCE_FILE"
+" >> "$__SOURCE_FILE"
 
 linkSafely
