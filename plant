@@ -42,3 +42,5 @@ for perennial in "${__perennialsDir}"/*; do
         logDebug "Skipping perennial: ${perennial}"
     fi
 done
+
+# TODO: install the tend script
