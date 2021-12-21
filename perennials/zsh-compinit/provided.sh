@@ -29,12 +29,16 @@ __SOURCE_FILE="${FIG_HOME}/${__PERENNIAL_DIR}/provided.plist"
 
 #### Main Script
 
-logDebug "Planting perennial: ${__PERENNIAL_DIR}"
-logTrace "Install target: ${__INSTALL_TARGET}"
-logTrace "Source file: ${__SOURCE_FILE}"
+# logDebug "Planting perennial: ${__PERENNIAL_DIR}"
+# logTrace "Install target: ${__INSTALL_TARGET}"
+# logTrace "Source file: ${__SOURCE_FILE}"
 
-linkSafely
+# linkSafely
 
-logDebug "Loading ${__PERENNIAL_DIR} into launchd"
-# https://www.reddit.com/r/MacOS/comments/kbko61/launchctl_broken/gpv2to1?utm_source=share&utm_medium=web2x&context=3
-launchctl enable "user/${UID}/$(basename ${__INSTALL_TARGET} .plist)"
+# logDebug "Loading ${__PERENNIAL_DIR} into launchd"
+# # https://www.reddit.com/r/MacOS/comments/kbko61/launchctl_broken/gpv2to1?utm_source=share&utm_medium=web2x&context=3
+# launchctl enable "user/${UID}/$(basename ${__INSTALL_TARGET} .plist)"
+
+# doesn't work properly with links at the moment
+logWarn "Please manually copy $__SOURCE_FILE to $__INSTALL_TARGET then run the following:"
+logWarn "launchctl enable \"user/${UID}/$(basename ${__INSTALL_TARGET} .plist)\""
