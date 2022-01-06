@@ -33,16 +33,17 @@ mkdir -p "$targetDirectory"
 for sourceFile in "${FIG_HOME}/${__PERENNIAL_DIR}"/*.xccolortheme; do
     
     #### Globals, the rest
-    __INSTALL_TARGET="${HOME}/Library/Developer/Xcode/UserData/FontAndColorThemes/$(basename $sourceFile)"
+    __INSTALL_TARGET="${HOME}/Library/Developer/Xcode/UserData/FontAndColorThemes/$(basename "$sourceFile")"
     __SOURCE_FILE="$sourceFile"
 
 
     #### Main Script
 
-    logDebug "Planting perennial: ${__PERENNIAL_DIR}"
-    logTrace "Install target: ${__INSTALL_TARGET}"
-    logTrace "Source file: ${__SOURCE_FILE}"
+    logDebug "Planting perennial: ${__PERENNIAL_DIR} (via cp)"
+    logTrace "Install target: ${__INSTALL_TARGET} (via cp)"
+    logTrace "Source file: ${__SOURCE_FILE} (via cp)"
 
-    linkSafely
+    # need to copy because Xcode doesn't like links
+    cp "$__SOURCE_FILE" "$__INSTALL_TARGET"
 
 done
