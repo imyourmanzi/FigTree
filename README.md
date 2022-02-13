@@ -49,6 +49,8 @@ Use `OMZ_THEME_RANDOM_CANDIDATES` for the `ZSH_THEME_RANDOM_CANDIDATES` variable
 
 #### Vim
 
+#### Word Jump
+
 ### Perennials
 
 #### Darwin (macOS)
