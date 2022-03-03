@@ -26,8 +26,12 @@ if ls $ZSH &> /dev/null; then
     # makes repository status check for large repositories much, much faster
     DISABLE_UNTRACKED_FILES_DIRTY=${DISABLE_UNTRACKED_FILES_DIRTY:="true"}
 
-    # load a few of your favorite plugins
-    plugins=${OMZ_PLUGINS:="git"}
+    # load a few of your favorite plugins by setting OMZ_PLUGINS in your .zshrc
+    __DEFAULT_PLUGINS_ENABLED=(git)
+    if type fzf &> /dev/null; then
+        __DEFAULT_PLUGINS_ENABLED+=(fzf)
+    fi
+    plugins=(${(A)OMZ_PLUGINS:=$__DEFAULT_PLUGINS_ENABLED})
 
     # start up omz
     source $ZSH/oh-my-zsh.sh
