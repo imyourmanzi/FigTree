@@ -1,6 +1,9 @@
 # File: oh_my_zsh.zshrc
 # Author: Matt Manzi
 # Date: 2021-02-13
+#
+# The containing directory is prefixed with an `_` to ensure it runs first in setup.  Oh
+# My Zsh sets a lot of aliases that we may want to override later (e.g. aliases for `ls`).
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
