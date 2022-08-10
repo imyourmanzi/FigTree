@@ -9,7 +9,7 @@
 whence __init_nvm > /dev/null || if [ -s "$HOME/.nvm/nvm.sh" ]; then
     export NVM_DIR="$HOME/.nvm"
     [ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"
-    declare -a __node_commands=('nvm' 'node' 'npm' 'yarn' 'gulp' 'grunt' 'webpack')
+    declare -a __node_commands=('nvm' 'node' 'npm' 'npx' 'yarn' 'pnpm')
     
     # only update the command list if the variable was set
     # (avoids adding an empty item to the list and causing a minor error)
