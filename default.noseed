@@ -12,68 +12,84 @@
 # macOS perennials
 
 ## this perennial's functionality is needed for using Fig Tree in bash shells
-#perennials/darwin/provided.bash_profile
+#perennials/darwin
+
+## window managers
+#perennials/rectangle
 
 ## terminal emulators
-#perennials/terminal/Fig Tree Dark.terminal
-#perennials/iterm2/provided.json
+#perennials/terminal
+#perennials/iterm2
+
+## Xcode
+#perennials/xcode
+
+## Zsh compinit
+#perennials/zsh-compinit
 
 # Git perennials
-#perennials/git/provided.gitconfig
+#perennials/git
 
 # SSH perennials
-#perennials/ssh/provided.config
+#perennials/ssh
 
 # Vim perennials
-#perennials/vim/provided.vimrc
-
-# Zsh perennials
-
-## compinit
-#perennials/zsh-compinit
+#perennials/vim
 
 
 #-------------------------------------------------------------------------------
 # Annuals
 
-# Exit annuals
-#annuals/exit/exit.*rc
+# Oh My Zsh settings
+#annuals/_oh-my-zsh
 
-# Go annuals
-#annuals/go/go.*rc
+# Homebrew
+#annuals/brew
 
-# Shell history annuals
-#annuals/history/history.*rc
+# Exa
+#annuals/exa
 
-# ip command annuals
-#annuals/ip/ip.*rc
+# Exit alias
+#annuals/exit
 
-# ls command annuals
-#annuals/ls/ls.*rc
+# Golang
+#annuals/go
 
-# Meme command annuals
-#annuals/meme/meme.*rc
+# Shell history settings
+#annuals/history
 
-# NVM command annuals
-#annuals/nvm/nvm.*rc
+# ip aliases
+#annuals/ip
 
-# Oh My Zsh command annuals
-#annuals/oh-my-zsh/oh_my_zsh.*rc
+# ls aliases
+#annuals/ls
 
-# Prompt annuals
-#annuals/prompt/prompt.*rc
+# Meme aliases
+#annuals/meme
 
-# pwd command annuals
-#annuals/pwd/pwd.*rc
+# NVM alias
+#annuals/nvm
 
-# AppleShowAllFiles command annuals
-#annuals/show-files/show_files.*rc
+# Persist alias
+#annuals/persist
 
-# Swift annuals
-#annuals/swift/swift.*rc
+# Shell prompt settings
+#annuals/prompt
 
-# up command annuals
-#annuals/up/up.*rc
+# pwd alias
+#annuals/pwd
 
-# Vim annuals
-#annuals/vim/vim.*rc
+# AppleShowAllFiles alias
+#annuals/show-files
+
+# Swift
+#annuals/swift
+
+# up alias
+#annuals/up
+
+# Vim
+#annuals/vim
+
+# Jump by word in terminal settings
+#annuals/word-jump
