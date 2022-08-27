@@ -12,6 +12,15 @@ A command line configuration utility to ensure a consistent experience across ev
    1. `FIG_DEBUG=true ~/.fig/plant` for debugging detail
       1. `FIG_TRACE=true ~/.fig/plant` for even more detail
 
+1. Start a new shell to see it work
+   1. Running `fig` will take you to your installation of Fig Tree
+
+## Environment Variables
+
+Fig Tree defines these custom (and potentially useful) environment variables in your shell's environment.
+
+- `FIG_HOME`: where Fig Tree was planted (where the `./plant` script lives)
+
 ## Included Functionality
 
 ### Annuals
