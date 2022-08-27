@@ -21,29 +21,35 @@ fi
 #### Includes
 source "${FIG_HOME}/tool-shed/logger.bash"
 source "${FIG_HOME}/tool-shed/linker.bash"
+source "${FIG_HOME}/tool-shed/globals.bash"
 
-#### Globals
-__PERENNIAL_DIR="perennials/xcode"
+# only run for macOS
+if [[ "${FIG_OS}" == "${__FIG_MAC_OS}" ]]; then
+    #### Globals
+    __PERENNIAL_DIR="perennials/xcode"
 
-targetDirectory="${HOME}/Library/Developer/Xcode/UserData/FontAndColorThemes/"
+    targetDirectory="${HOME}/Library/Developer/Xcode/UserData/FontAndColorThemes/"
 
-logTrace "Creating Xcode themes directory in case it doesn't exist (${targetDirectory})"
-mkdir -p "$targetDirectory"
+    logTrace "Creating Xcode themes directory in case it doesn't exist (${targetDirectory})"
+    mkdir -p "$targetDirectory"
 
-for sourceFile in "${FIG_HOME}/${__PERENNIAL_DIR}"/*.xccolortheme; do
-    
-    #### Globals, the rest
-    __INSTALL_TARGET="${HOME}/Library/Developer/Xcode/UserData/FontAndColorThemes/$(basename "$sourceFile")"
-    __SOURCE_FILE="$sourceFile"
+    for sourceFile in "${FIG_HOME}/${__PERENNIAL_DIR}"/*.xccolortheme; do
+        
+        #### Globals, the rest
+        __INSTALL_TARGET="${HOME}/Library/Developer/Xcode/UserData/FontAndColorThemes/$(basename "$sourceFile")"
+        __SOURCE_FILE="$sourceFile"
 
 
-    #### Main Script
+        #### Main Script
 
-    logDebug "Planting perennial: ${__PERENNIAL_DIR} (via cp)"
-    logTrace "Install target: ${__INSTALL_TARGET} (via cp)"
-    logTrace "Source file: ${__SOURCE_FILE} (via cp)"
+        logDebug "Planting perennial: ${__PERENNIAL_DIR} (via cp)"
+        logTrace "Install target: ${__INSTALL_TARGET} (via cp)"
+        logTrace "Source file: ${__SOURCE_FILE} (via cp)"
 
-    # need to copy because Xcode doesn't like links
-    cp "$__SOURCE_FILE" "$__INSTALL_TARGET"
+        # need to copy because Xcode doesn't like links
+        cp "$__SOURCE_FILE" "$__INSTALL_TARGET"
 
-done
+    done
+else
+    logInfo "Not planting xcode, current system is ${FIG_OS}"
+fi

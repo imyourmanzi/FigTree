@@ -19,7 +19,7 @@ source "${FIG_HOME}/tool-shed/logger.bash"
 source "${FIG_HOME}/tool-shed/linker.bash"
 source "${FIG_HOME}/tool-shed/globals.bash"
 
-# only run 
+# only run for macOS
 if [[ "${FIG_OS}" == "${__FIG_MAC_OS}" ]]; then
     #### Globals
     __INSTALL_TARGET="${HOME}/.bash_profile"

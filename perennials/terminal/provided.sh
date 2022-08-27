@@ -21,18 +21,23 @@ fi
 
 #### Includes
 source "${FIG_HOME}/tool-shed/logger.bash"
+source "${FIG_HOME}/tool-shed/globals.bash"
+
+# only run for macOS
+if [[ "${FIG_OS}" == "${__FIG_MAC_OS}" ]]; then
+    #### Globals
+    __PERENNIAL_DIR="perennials/terminal"
+    __SOURCE_FILE="${FIG_HOME}/${__PERENNIAL_DIR}/Fig Tree Dark.terminal"
 
 
-#### Globals
-__PERENNIAL_DIR="perennials/terminal"
-__SOURCE_FILE="${FIG_HOME}/${__PERENNIAL_DIR}/Fig Tree Dark.terminal"
+    #### Main Script
 
+    logDebug "Planting perennial: ${__PERENNIAL_DIR}"
+    logTrace "Source file: ${__SOURCE_FILE}"
+    logWarn "Terminal will launch shortly (if it is not running already) and a new window will open.  It can be closed at any time."
+    sleep 1
 
-#### Main Script
-
-logDebug "Planting perennial: ${__PERENNIAL_DIR}"
-logTrace "Source file: ${__SOURCE_FILE}"
-logWarn "Terminal will launch shortly (if it is not running already) and a new window will open.  It can be closed at any time."
-sleep 1
-
-open "${__SOURCE_FILE}"
+    open "${__SOURCE_FILE}"
+else
+    logInfo "Not planting terminal, current system is ${FIG_OS}"
+fi

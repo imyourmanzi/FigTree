@@ -21,25 +21,24 @@ fi
 #### Includes
 source "${FIG_HOME}/tool-shed/logger.bash"
 source "${FIG_HOME}/tool-shed/linker.bash"
+source "${FIG_HOME}/tool-shed/globals.bash"
+
+# only run for macOS
+if [[ "${FIG_OS}" == "${__FIG_MAC_OS}" ]]; then
+    #### Globals
+    __INSTALL_TARGET=""
+    __PERENNIAL_DIR="perennials/rectangle"
+    __SOURCE_FILE="${FIG_HOME}/${__PERENNIAL_DIR}/provided.json"
 
 
-#### Globals
-__INSTALL_TARGET=""
-__PERENNIAL_DIR="perennials/rectangle"
-__SOURCE_FILE="${FIG_HOME}/${__PERENNIAL_DIR}/provided.json"
+    #### Main Script
 
-
-#### Main Script
-
-# logDebug "Planting perennial: ${__PERENNIAL_DIR}"
-# logTrace "Install target: ${__INSTALL_TARGET}"
-# logTrace "Source file: ${__SOURCE_FILE}"
-
-# linkSafely
-
-# use manual import
-logWarn "The easiest way to import Rectangle preferences is to:"
-logWarn "open the application preferences, click Import, type cmd + shift + G, and paste in this path:"
-logWarn "  ${FIG_HOME}/${__PERENNIAL_DIR}"
-logWarn "Then choose the file named: provided.json"
-sleep 5 && read -p "Press enter when ready to continue with setup"
+    # use manual import
+    logWarn "The easiest way to import Rectangle preferences is to:"
+    logWarn "open the application preferences, click Import, type cmd + shift + G, and paste in this path:"
+    logWarn "  ${FIG_HOME}/${__PERENNIAL_DIR}"
+    logWarn "Then choose the file named: provided.json"
+    sleep 5 && read -p "Press enter when ready to continue with setup"
+else
+    logInfo "Not planting rectangle, current system is ${FIG_OS}"
+fi

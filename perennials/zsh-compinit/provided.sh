@@ -19,31 +19,36 @@ fi
 #### Includes
 source "${FIG_HOME}/tool-shed/logger.bash"
 source "${FIG_HOME}/tool-shed/linker.bash"
+source "${FIG_HOME}/tool-shed/globals.bash"
+
+# only run for macOS
+if [[ "${FIG_OS}" == "${__FIG_MAC_OS}" ]]; then
+    #### Globals
+    __INSTALL_TARGET="${HOME}/Library/LaunchAgents/com.figtree.zsh.compinit.plist"
+    __PERENNIAL_DIR="perennials/zsh-compinit"
+    __SOURCE_FILE="${FIG_HOME}/${__PERENNIAL_DIR}/provided.plist"
 
 
-#### Globals
-__INSTALL_TARGET="${HOME}/Library/LaunchAgents/com.figtree.zsh.compinit.plist"
-__PERENNIAL_DIR="perennials/zsh-compinit"
-__SOURCE_FILE="${FIG_HOME}/${__PERENNIAL_DIR}/provided.plist"
+    #### Main Script
 
+    # logDebug "Planting perennial: ${__PERENNIAL_DIR}"
+    # logTrace "Install target: ${__INSTALL_TARGET}"
+    # logTrace "Source file: ${__SOURCE_FILE}"
 
-#### Main Script
+    # linkSafely
 
-# logDebug "Planting perennial: ${__PERENNIAL_DIR}"
-# logTrace "Install target: ${__INSTALL_TARGET}"
-# logTrace "Source file: ${__SOURCE_FILE}"
+    # logDebug "Loading ${__PERENNIAL_DIR} into launchd"
+    # # https://www.reddit.com/r/MacOS/comments/kbko61/launchctl_broken/gpv2to1?utm_source=share&utm_medium=web2x&context=3
+    # launchctl enable "user/${UID}/$(basename ${__INSTALL_TARGET} .plist)"
 
-# linkSafely
-
-# logDebug "Loading ${__PERENNIAL_DIR} into launchd"
-# # https://www.reddit.com/r/MacOS/comments/kbko61/launchctl_broken/gpv2to1?utm_source=share&utm_medium=web2x&context=3
-# launchctl enable "user/${UID}/$(basename ${__INSTALL_TARGET} .plist)"
-
-# doesn't work properly with links at the moment
-logWarn "In a new terminal, please manually copy"
-logWarn "  $__SOURCE_FILE"
-logWarn " to"
-logWarn "  $__INSTALL_TARGET"
-logWarn "then run the following:"
-logWarn "launchctl enable \"user/${UID}/$(basename ${__INSTALL_TARGET} .plist)\""
-sleep 5 && read -p "Press enter when ready to continue with setup"
+    # doesn't work properly with links at the moment
+    logWarn "In a new terminal, please manually copy"
+    logWarn "  $__SOURCE_FILE"
+    logWarn " to"
+    logWarn "  $__INSTALL_TARGET"
+    logWarn "then run the following:"
+    logWarn "launchctl enable \"user/${UID}/$(basename ${__INSTALL_TARGET} .plist)\""
+    sleep 5 && read -p "Press enter when ready to continue with setup"
+else
+    logInfo "Not planting zsh-compinit, current system is ${FIG_OS}"
+fi
