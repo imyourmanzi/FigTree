@@ -2,6 +2,16 @@
 
 A command line configuration utility to ensure a consistent experience across every terminal.
 
+## Installation and Usage
+
+1. `git clone https://github.com/imyourmanzi/FigTree.git ~/.fig`
+
+1. (Optional) Exclude certain seeds: `cp ~/.fig/default.noseed ~/.fig/.noseed` and then uncomment the ones to exclude
+
+1. `~/.fig/plant`
+   1. `FIG_DEBUG=true ~/.fig/plant` for debugging detail
+      1. `FIG_TRACE=true ~/.fig/plant` for even more detail
+
 ## Included Functionality
 
 ### Annuals
