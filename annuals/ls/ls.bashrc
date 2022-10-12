@@ -4,6 +4,7 @@
 #
 # Handy ls aliases that most of us expect to have by default.
 
+# See this: https://the.exa.website/docs/colour-themes
 export LS_COLORS="di=1;38;5;75:${LS_COLORS}"
 
 alias ll='ls -Fhl --color'
