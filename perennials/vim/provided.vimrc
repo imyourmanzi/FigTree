@@ -24,7 +24,7 @@ if has("syntax")
 endif
 
 " Colorscheme - eventually make my own that's a combination of delek and pablo
-colo delek
+colo desert
 
 " Line numbers on the left
 "set number
