@@ -4,6 +4,8 @@
 #
 # Handy ls aliases that most of us expect to have by default.
 
+export LS_COLORS="di=1;38;5;75:${LS_COLORS}"
+
 alias ll='ls -Fhl --color'
 alias la='ls -aFhl --color'
 # some systems don't allow single-letter aliases
