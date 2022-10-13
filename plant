@@ -20,9 +20,6 @@ source "${FIG_HOME}/tool-shed/logger.bash"
 source "${FIG_HOME}/tool-shed/parse_noseed.bash"
 
 
-#### Globals
-
-
 #### Main Script
 
 # parse the noseed file
@@ -43,11 +40,33 @@ for perennial in "${__perennialsDir}"/*; do
     fi
 done
 
-# install the tend script
-logInfo "Installing tend script for bash"
-echo "export FIG_HOME=$FIG_HOME
-source \"${FIG_HOME}/annuals/tend.bashrc\"" >> "${HOME}/.bashrc"
+__tendInstall () {
+    echo "
+export FIG_HOME=\"$FIG_HOME\"
+source \"\${FIG_HOME}/annuals/tend$1\"
+"
+}
 
-logInfo "Installing tend script for zsh"
-echo "export FIG_HOME=$FIG_HOME
-source \"\${FIG_HOME}/annuals/tend.zshrc\"" >> "${HOME}/.zshrc"
+# install the tend script for Bash
+logInfo "Installing tend script for Bash"
+__bashrc=".bashrc"
+__tendInstallBash="$(__tendInstall "$__bashrc")"
+
+if ! grep -q 'source "${FIG_HOME' "${HOME}/$__bashrc" &> /dev/null; then
+    logDebug "Bash tend script is not already sourced"
+    echo "$__tendInstallBash" >> "${HOME}/$__bashrc"
+else
+    logDebug "Bash tend script is already sourced"
+fi
+
+# install the tend script for Zsh
+logInfo "Installing tend script for Zsh"
+__zshrc=".zshrc"
+__tendInstallZsh="$(__tendInstall "$__zshrc")"
+
+if ! grep -q 'source "${FIG_HOME' "${HOME}/$__zshrc" &> /dev/null; then
+    logDebug "Zsh tend script is not already sourced"
+    echo "${__tendInstallZsh}" >> "${HOME}/$__zshrc"
+else
+    logDebug "Zsh tend script is already sourced"
+fi
