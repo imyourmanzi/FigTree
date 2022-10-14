@@ -53,7 +53,7 @@ whence __init_nvm > /dev/null || if [ -s "$HOME/.nvm/nvm.sh" ]; then
         # don't let `nvm current' trigger init
         if [[ "$1" == "nvm" ]]; then
             if [[ "$2" == "current" ]]; then
-                echo -n "$DEFAULT_NVM_CURRENT"
+                echo -n "${DEFAULT_NVM_CURRENT:=none}"
                 return
             fi
         fi
