@@ -44,9 +44,13 @@ fi
 cp "$__SOURCE_FILE" "${__SOURCE_FILE}.grown"
 __SOURCE_FILE="${__SOURCE_FILE}.grown"
 
-echo "[user]
+echo "
+[user]
     name = $gitUserName
     email = $gitUserEmail
+
+[pull]
+    rebase = true
 " >> "$__SOURCE_FILE"
 
 linkSafely
