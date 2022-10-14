@@ -35,7 +35,7 @@ if type brew &>/dev/null; then
         logDebug "Installation step initiated by user"
         
         logInfo "Installing CLI utilities"
-        brew install -q exa bat btop ripgrep fd
+        brew install -q cmatrix exa bat btop ripgrep fd
         
         logInfo "Installing Homebrew fonts cask and Roboto Mono Nerd Font"
         brew tap -q homebrew/cask-fonts
