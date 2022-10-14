@@ -1,10 +1,10 @@
 # File: word_jump.zshrc
 # Author: Matt Manzi
-# Date: 2022-02-12
+# Date: 2022-10-13
 #
 # Use the `option` key to navigate by word/line.
 # for cmd + arrow key cursor navigation
 # https://coderwall.com/p/a8uxma/zsh-iterm2-osx-shortcuts
 
-bindkey "[D" backward-word
-bindkey "[C" forward-word
+bind '"[D": backward-word'
+bind '"[C": forward-word'
