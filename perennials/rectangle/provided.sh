@@ -33,12 +33,17 @@ if [[ "${FIG_OS}" == "${__FIG_MAC_OS}" ]]; then
 
     #### Main Script
 
-    # use manual import
-    logWarn "The easiest way to import Rectangle preferences is to:"
-    logWarn "open the application preferences, click Import, type cmd + shift + G, and paste in this path:"
-    logWarn "  ${FIG_HOME}/${__PERENNIAL_DIR}"
-    logWarn "Then choose the file named: provided.json"
-    sleep 5 && read -p "Press enter when ready to continue with setup"
+    # only run if Rectangle is installed via Homebrew
+    if [[ -d "$(brew --prefix)/Caskroom/rectangle" ]]; then
+        # use manual import
+        logWarn "The easiest way to import Rectangle preferences is to:"
+        logWarn "open the application preferences, click Import, type cmd + shift + G, and paste in this path:"
+        logWarn "  ${FIG_HOME}/${__PERENNIAL_DIR}"
+        logWarn "Then choose the file named: provided.json"
+        sleep 5 && read -p "Press enter when ready to continue with setup"
+    else
+        logInfo "Not planting rectangle, Rectangle is not installed"
+    fi
 else
     logInfo "Not planting rectangle, current system is ${FIG_OS}"
 fi
