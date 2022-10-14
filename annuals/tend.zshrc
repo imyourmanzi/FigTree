@@ -18,6 +18,10 @@ source "${FIG_HOME}/tool-shed/globals.zsh"
 
 alias fig='cd $FIG_HOME'
 
+# enable Zsh completion system (https://stackoverflow.com/a/67161186/15114520)
+autoload -Uz compinit; compinit
+autoload -U +X bashcompinit && bashcompinit
+
 # plant annuals in the garden
 for annual in "${FIG_HOME}/annuals"/*/*"${FIG_RC}"; do
     source "${annual}"
