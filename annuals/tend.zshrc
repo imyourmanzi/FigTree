@@ -16,7 +16,20 @@ fi
 
 source "${FIG_HOME}/tool-shed/globals.zsh"
 
-alias fig='cd $FIG_HOME'
+function __fig() {
+    if [[ -z "$@" ]]; then
+        cd "$FIG_HOME"
+    elif [[ "$1" == "update" ]]; then
+        if git -C "$FIG_HOME" diff --quiet; then
+            git -C "$FIG_HOME" pull
+            echo "Fig Tree has been updated"
+        else
+            echo "Cannot update while there are changes to your local copy, please 'git stash' them first"
+        fi
+    fi
+}
+
+alias fig='__fig'
 
 # enable Zsh completion system (https://stackoverflow.com/a/67161186/15114520)
 autoload -Uz compinit; compinit
