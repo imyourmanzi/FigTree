@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# File: _brew/provided.sh
+# File: _apt/provided.sh
 # Author: Matt Manzi
-# Date: 2022-10-13
+# Date: 2022-10-14
 #
 # Prerequisites:
 # - FIG_HOME is set to the Fig Tree project directory.
@@ -20,23 +20,23 @@ source "${FIG_HOME}/tool-shed/globals.bash"
 source "${FIG_HOME}/tool-shed/yn_prompt.bash"
 
 # only set up perennial if Homebrew is installed
-if type brew &>/dev/null; then
+if ! type brew &>/dev/null && type apt &> /dev/null; then
     #### Globals
-    __PERENNIAL_DIR="perennials/_brew"
+    __PERENNIAL_DIR="perennials/_apt"
 
 
     #### Main Script
 
     logDebug "Planting perennial: ${__PERENNIAL_DIR}"
 
-    if ynPrompt "Do you want to install recommended packages from Homebrew"; then
+    if ynPrompt "Do you want to install recommended packages from apt"; then
         logDebug "Installation step initiated by user"
         
         logInfo "Installing CLI utilities"
-        brew install -q cmatrix exa bat btop ripgrep fd
+        sudo apt install -q=2 cmatrix exa bat ripgrep fd-find
     else
         logDebug "Installation step skipped by user"
     fi
 else
-    logDebug "Not planting brew, Homebrew is not installed"
+    logDebug "Not planting apt, Homebrew is installed and/or apt is not available"
 fi
