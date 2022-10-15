@@ -91,21 +91,48 @@ Perennials that are "grown" are ones that copy in an existing configuration file
 
 The only way to update a grown perennial with changes from an upstream repository (i.e. with changes that were not directly made to the file) is to re-run the [**plant**](/plant) script.
 
+#### `apt`
+
+_Will prompt you for input and ask for root permissions to run `apt install`._
+
+If Homebrew is installed, that will be the preferred package manager and this perennial will not run.
+
+Packages installed:
+
+- cmatrix
+- exa
+- bat
+- ripgrep (`rg`)
+- fd-find (`fdfind`)
+
 #### Brew (Homebrew)
 
-_Will prompt you for input if [Homebrew](brew.sh) is installed_
+_Will prompt you for input if [Homebrew](brew.sh) is installed._
+
+This is the favored package manager. Even if your system has multiple installed/available, only Homebrew will be used.
+
+Packages installed:
+
+- cmatrix
+- exa
+- bat
+- btop
+- ripgrep (`rg`)
+- fd
 
 #### Darwin (macOS)
 
-#### Git (grown)
+#### Fonts
 
-_May prompt you for input_
+#### [grown] Git
+
+_May prompt you for input._
 
 #### iTerm2
 
 #### Rectangle
 
-_Requires manual steps if [Rectangle](https://github.com/rxhanson/Rectangle) is installed_
+_Requires manual steps if [Rectangle](https://github.com/rxhanson/Rectangle) is installed._
 
 #### SSH
 
