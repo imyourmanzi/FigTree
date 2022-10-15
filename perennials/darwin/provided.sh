@@ -35,5 +35,5 @@ if [[ "${FIG_OS}" == "${__FIG_MAC_OS}" ]]; then
 
     linkSafely
 else
-    logInfo "Not planting darwin, current system is ${FIG_OS}"
+    logDebug "Not planting darwin, current system is ${FIG_OS}"
 fi

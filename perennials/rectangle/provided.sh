@@ -42,8 +42,8 @@ if [[ "${FIG_OS}" == "${__FIG_MAC_OS}" ]]; then
         logWarn "Then choose the file named: provided.json"
         sleep 5 && read -p "Press enter when ready to continue with setup"
     else
-        logInfo "Not planting rectangle, Rectangle is not installed"
+        logDebug "Not planting rectangle, Rectangle is not installed"
     fi
 else
-    logInfo "Not planting rectangle, current system is ${FIG_OS}"
+    logDebug "Not planting rectangle, current system is ${FIG_OS}"
 fi

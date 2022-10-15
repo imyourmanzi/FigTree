@@ -24,6 +24,14 @@ function logInfo () {
     echo -e "[INFO] ${1}"
 }
 
+function logInfoNoNewline () {
+    echo -e -n "[INFO] ${1}"
+}
+
+function logInfoNoPrefix () {
+    echo -e "${1}"
+}
+
 function logWarn () {
     echo -ne "\033[38;5;172m"
     echo -e "[WARN] ${1}"

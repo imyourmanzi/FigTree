@@ -51,5 +51,5 @@ if [[ "${FIG_OS}" == "${__FIG_MAC_OS}" ]]; then
 
     done
 else
-    logInfo "Not planting xcode, current system is ${FIG_OS}"
+    logDebug "Not planting xcode, current system is ${FIG_OS}"
 fi

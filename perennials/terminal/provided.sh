@@ -39,5 +39,5 @@ if [[ "${FIG_OS}" == "${__FIG_MAC_OS}" ]]; then
 
     open "${__SOURCE_FILE}"
 else
-    logInfo "Not planting terminal, current system is ${FIG_OS}"
+    logDebug "Not planting terminal, current system is ${FIG_OS}"
 fi

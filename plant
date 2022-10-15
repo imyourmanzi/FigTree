@@ -26,6 +26,7 @@ source "${FIG_HOME}/tool-shed/parse_noseed.bash"
 parseNoseedFile
 
 # plant perennials
+logInfo "Planting perennials"
 __perennialsDir="${FIG_HOME}/perennials"
 for perennial in "${__perennialsDir}"/*; do
     logTrace "Evaluating perennial: ${perennial}"
@@ -34,7 +35,9 @@ for perennial in "${__perennialsDir}"/*; do
         logTrace "Planting perennial: ${perennial}"
         
         # provided.sh are the template file names but this will plant any script file
+        logInfoNoNewline "Planting ${perennial}..."
         "${perennial}"/*".sh"
+        logInfoNoPrefix "OK"
         logTrace "Finished perennial: ${perennial}"
     else
         logDebug "Skipping perennial: ${perennial}"
