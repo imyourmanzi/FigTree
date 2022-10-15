@@ -26,6 +26,8 @@ function __fig() {
         else
             echo "Cannot update while there are changes to your local copy, please 'git stash' them first"
         fi
+    elif [[ "$1" == "repot" ]]; then
+        "${FIG_HOME}/plant"
     fi
 }
 
