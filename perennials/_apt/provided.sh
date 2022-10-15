@@ -36,7 +36,9 @@ if ! type brew &>/dev/null && type apt &> /dev/null; then
         logTrace "Updating apt"
         sudo apt update -q=2 &> /dev/null
         logTrace "Installing CLI utilities"
-        sudo apt install -q=2 -m cmatrix exa bat ripgrep fd-find 2> /dev/null
+        for package in cmatrix exa bat ripgrep fd-find; do
+            sudo apt install -y -q=2 -m "$package" 2> /dev/null
+        done
     else
         logDebug "Installation step skipped by user"
     fi
