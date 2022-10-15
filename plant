@@ -31,10 +31,11 @@ for perennial in "${__perennialsDir}"/*; do
     logTrace "Evaluating perennial: ${perennial}"
 
     if [[ ! " ${__noSeed[@]} " =~ " ${perennial}".*" " ]]; then
-        logInfo "Planting perennial: ${perennial}"
+        logTrace "Planting perennial: ${perennial}"
         
         # provided.sh are the template file names but this will plant any script file
         "${perennial}"/*".sh"
+        logTrace "Finished perennial: ${perennial}"
     else
         logDebug "Skipping perennial: ${perennial}"
     fi
