@@ -27,13 +27,15 @@ if ! type brew &>/dev/null && type apt &> /dev/null; then
 
     #### Main Script
 
-    logDebug "Planting perennial: ${__PERENNIAL_DIR}"
+    logDebug "\nPlanting perennial: ${__PERENNIAL_DIR}"
 
+    logInfoNoPrefix ""
     if ynPrompt "Do you want to install recommended packages from apt"; then
         logDebug "Installation step initiated by user"
         
-        logInfo "Installing CLI utilities"
+        logTrace "Updating apt"
         sudo apt update -q=2 &> /dev/null
+        logTrace "Installing CLI utilities"
         sudo apt install -q=2 -m cmatrix exa bat ripgrep fd-find 2> /dev/null
     else
         logDebug "Installation step skipped by user"

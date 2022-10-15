@@ -29,7 +29,7 @@ if [[ "${FIG_OS}" == "${__FIG_MAC_OS}" ]]; then
 
     #### Main Script
 
-    logDebug "Planting perennial: ${__PERENNIAL_DIR}"
+    logDebug "\nPlanting perennial: ${__PERENNIAL_DIR}"
     logTrace "Install target: ${__INSTALL_TARGET}"
     logTrace "Source file: ${__SOURCE_FILE}"
 

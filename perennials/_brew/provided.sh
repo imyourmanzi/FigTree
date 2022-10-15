@@ -27,12 +27,13 @@ if type brew &>/dev/null; then
 
     #### Main Script
 
-    logDebug "Planting perennial: ${__PERENNIAL_DIR}"
+    logDebug "\nPlanting perennial: ${__PERENNIAL_DIR}"
 
+    logInfoNoPrefix ""
     if ynPrompt "Do you want to install recommended packages from Homebrew"; then
         logDebug "Installation step initiated by user"
         
-        logInfo "Installing CLI utilities"
+        logTrace "Installing CLI utilities"
         brew install -q cmatrix exa bat btop ripgrep fd
     else
         logDebug "Installation step skipped by user"

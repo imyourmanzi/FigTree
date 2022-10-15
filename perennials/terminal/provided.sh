@@ -32,7 +32,7 @@ if [[ "${FIG_OS}" == "${__FIG_MAC_OS}" ]]; then
 
     #### Main Script
 
-    logDebug "Planting perennial: ${__PERENNIAL_DIR}"
+    logDebug "\nPlanting perennial: ${__PERENNIAL_DIR}"
     logTrace "Source file: ${__SOURCE_FILE}"
     logWarn "Terminal will launch shortly (if it is not running already) and a new window will open.  It can be closed at any time."
     sleep 1

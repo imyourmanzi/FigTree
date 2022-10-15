@@ -27,7 +27,7 @@ __SOURCE_FILE="${FIG_HOME}/${__PERENNIAL_DIR}/provided.gitconfig"
 
 #### Main Script
 
-logDebug "Planting perennial: ${__PERENNIAL_DIR}"
+logDebug "\nPlanting perennial: ${__PERENNIAL_DIR}"
 logTrace "Install target: ${__INSTALL_TARGET}"
 logTrace "Source file: ${__SOURCE_FILE}"
 
