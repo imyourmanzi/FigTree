@@ -9,6 +9,17 @@
 #-------------------------------------------------------------------------------
 # Perennials
 
+# package manager perennials
+
+## apt
+#perennials/_apt
+
+## Homebrew
+#perennials/_brew
+
+# fonts
+#perennials/fonts
+
 # macOS perennials
 
 ## this perennial's functionality is needed for using Fig Tree in bash shells
