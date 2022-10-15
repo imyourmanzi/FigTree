@@ -33,7 +33,8 @@ if ! type brew &>/dev/null && type apt &> /dev/null; then
         logDebug "Installation step initiated by user"
         
         logInfo "Installing CLI utilities"
-        sudo apt install -q=2 cmatrix exa bat ripgrep fd-find
+        sudo apt update -q=2 &> /dev/null
+        sudo apt install -q=2 -m cmatrix exa bat ripgrep fd-find
     else
         logDebug "Installation step skipped by user"
     fi
