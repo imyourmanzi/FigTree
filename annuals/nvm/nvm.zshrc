@@ -70,14 +70,15 @@ whence __init_nvm > /dev/null || if [ -s "$HOME/.nvm/nvm.sh" ]; then
         # cleanup
         unset __node_commands
         unset -f __init_nvm
-
-        # run requested command
-        $@
     }
 
     # alias all of the node commands to init before using nvm or node
     function __nvm_init_alias() {
-        whence __init_nvm > /dev/null && __init_nvm $@ || $@
+        # initialize nvm if we haven't yet
+        whence __init_nvm > /dev/null && __init_nvm
+
+        # run requested command
+        $@
     }
     for i in "${__node_commands[@]}"; do alias $i='__nvm_init_alias '$i; done
 fi
