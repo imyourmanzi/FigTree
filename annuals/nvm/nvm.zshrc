@@ -50,12 +50,10 @@ whence __init_nvm > /dev/null || if [ -s "$HOME/.nvm/nvm.sh" ]; then
     }
 
     function __init_nvm() {
-        # don't let `nvm current' trigger init
-        if [[ "$1" == "nvm" ]]; then
-            if [[ "$2" == "current" ]]; then
-                echo -n "${DEFAULT_NVM_CURRENT:=none}"
-                return
-            fi
+        # don't let non-tty calls trigger init (`[ -t 0 ]' is recommended over `tty -s')
+        if [ ! -t 0 ]; then
+            echo -n "${DEFAULT_NVM_STATUS:=none}"
+            return
         fi
 
         # undo those aliases and actually init nvm
