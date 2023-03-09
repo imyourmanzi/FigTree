@@ -8,5 +8,5 @@ __figGo="$HOME/.go"
 if type go &> /dev/null; then
     if [ ! -d "$__figGo" ]; then mkdir -p "$__figGo"; fi
     export GOPATH="$__figGo"
-    export PATH="$PATH:$GOPATH/bin"
+    export PATH="$GOPATH/bin:$PATH"
 fi
