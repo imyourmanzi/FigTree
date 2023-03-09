@@ -46,6 +46,7 @@ done
 
 __tendInstall () {
     echo "
+#### Fig Tree ####
 export FIG_HOME=\"$FIG_HOME\"
 source \"\${FIG_HOME}/annuals/tend$1\"
 "
@@ -63,7 +64,7 @@ else
     logDebug "Bash tend script is already sourced"
 fi
 
-# install the tend script for Zsh
+# install the tend scripts for Zsh
 logInfo "Installing tend script for Zsh"
 __zshrc=".zshrc"
 __tendInstallZsh="$(__tendInstall "$__zshrc")"
@@ -73,4 +74,15 @@ if ! grep -q 'source "${FIG_HOME' "${HOME}/$__zshrc" &> /dev/null; then
     echo "${__tendInstallZsh}" >> "${HOME}/$__zshrc"
 else
     logDebug "Zsh tend script is already sourced"
+fi
+
+logInfo "Installing tend script for zprofile"
+__zprofile=".zprofile"
+__tendInstallZprofile="$(__tendInstall "$__zprofile")"
+
+if ! grep -q 'source "${FIG_HOME' "${HOME}/$__zprofile" &> /dev/null; then
+    logDebug "zprofile tend script is not already sourced"
+    echo "${__tendInstallZprofile}" >> "${HOME}/$__zprofile"
+else
+    logDebug "zprofile tend script is already sourced"
 fi
