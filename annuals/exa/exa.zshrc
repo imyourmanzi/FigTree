@@ -9,6 +9,8 @@ if type exa &> /dev/null; then
     export LS_COLORS="${LS_COLORS}:di=1;38;5;27"
     export EXA_COLORS="${EXA_COLORS}:da=38;5;33"
 
-    alias le='exa -lbF --color=auto --group-directories-first --no-user --time=modified --time-style=iso --git'
-    alias lx='exa -albghF --color=auto --group-directories-first --time=modified --time-style=iso --git'
+    __exaIncludeGit="$({ exa --version | grep -q -- '+git' } && echo -n "--git")"
+
+    alias le="exa -lbF --color=auto --group-directories-first --no-user --time=modified --time-style=iso $__exaIncludeGit"
+    alias lx="exa -albghF --color=auto --group-directories-first --time=modified --time-style=iso $__exaIncludeGit"
 fi
