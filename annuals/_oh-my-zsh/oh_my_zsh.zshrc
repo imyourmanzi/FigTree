@@ -43,14 +43,14 @@ if [[ -d "$ZSH" ]]; then
 
     # default zsh themes (all double-liners)
     declare -a ZSH_THEME_RANDOM_CANDIDATES=("bira" "darkblood" "dstufft" "fino-time")
-    __addThemeIfInstalled "spaceship"
+    # __addThemeIfInstalled "spaceship"
 
     # if the iTerm profile indicates a specific theme category, default to those
     case "$ITERM_PROFILE" in
     *Node*)
         ZSH_THEME_RANDOM_CANDIDATES=("bureau")
         __addThemeIfInstalled "nodeys"
-        __addThemeIfInstalled "spaceship"
+        # __addThemeIfInstalled "spaceship"
         ;;
     *Single*)
         # simple single-line theme options
