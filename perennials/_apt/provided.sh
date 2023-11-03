@@ -36,7 +36,7 @@ if ! type brew &>/dev/null && type apt &> /dev/null; then
         logTrace "Updating apt"
         sudo apt update -q=2 &> /dev/null
         logTrace "Installing CLI utilities"
-        for package in cmatrix exa bat ripgrep fd-find; do
+        for package in cmatrix eza bat ripgrep fd-find; do
             sudo apt install -y -q=2 -m "$package" 2> /dev/null
         done
     else

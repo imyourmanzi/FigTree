@@ -34,7 +34,7 @@ if type brew &>/dev/null; then
         logDebug "Installation step initiated by user"
         
         logTrace "Installing CLI utilities"
-        brew install -q cmatrix exa bat btop ripgrep fd
+        brew install -q cmatrix eza bat btop ripgrep fd
     else
         logDebug "Installation step skipped by user"
     fi

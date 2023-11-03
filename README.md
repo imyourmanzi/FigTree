@@ -100,7 +100,7 @@ If Homebrew is installed, that will be the preferred package manager and this pe
 Packages installed:
 
 - cmatrix
-- exa
+- eza
 - bat
 - ripgrep (`rg`)
 - fd-find (`fdfind`)
@@ -114,7 +114,7 @@ This is the favored package manager. Even if your system has multiple installed/
 Packages installed:
 
 - cmatrix
-- exa
+- eza
 - bat
 - btop
 - ripgrep (`rg`)
