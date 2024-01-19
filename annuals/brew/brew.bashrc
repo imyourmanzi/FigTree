@@ -5,6 +5,10 @@
 # More information here:
 # https://docs.brew.sh/Shell-Completion#configuring-completions-in-bash
 
+[ -x "/opt/homebrew/bin/brew" ] && eval "$(/opt/homebrew/bin/brew shellenv)"
+[ -x "/usr/local/bin/brew" ] && eval "$(/usr/local/bin/brew shellenv)"
+[ -x "/home/linuxbrew/.linuxbrew/bin/brew" ] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
 if type brew &>/dev/null; then
     HOMEBREW_PREFIX="$(brew --prefix)"
 
