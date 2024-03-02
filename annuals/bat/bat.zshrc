@@ -7,3 +7,7 @@
 if type bat &> /dev/null; then
     alias cat="bat"
 fi
+
+if type batcat &> /dev/null; then
+    alias cat="batcat"
+fi
