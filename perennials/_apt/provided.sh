@@ -19,6 +19,17 @@ source "${FIG_HOME}/tool-shed/logger.bash"
 source "${FIG_HOME}/tool-shed/globals.bash"
 source "${FIG_HOME}/tool-shed/yn_prompt.bash"
 
+# ripped straight from here:
+# https://github.com/eza-community/eza/blob/main/INSTALL.md#debian-and-ubuntu
+function __prep_eza() {
+    sudo apt install -y -q=2 gpg
+    sudo mkdir -p /etc/apt/keyrings
+    wget -qO- https://raw.githubusercontent.com/eza-community/eza/main/deb.asc | sudo gpg --dearmor -o /etc/apt/keyrings/gierens.gpg
+    echo "deb [signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable main" | sudo tee /etc/apt/sources.list.d/gierens.list
+    sudo chmod 644 /etc/apt/keyrings/gierens.gpg /etc/apt/sources.list.d/gierens.list
+    sudo apt -y -q=2 update
+}
+
 # only set up perennial if Homebrew is installed
 if ! type brew &>/dev/null && type apt &> /dev/null; then
     #### Globals
@@ -36,6 +47,7 @@ if ! type brew &>/dev/null && type apt &> /dev/null; then
         logTrace "Updating apt"
         sudo apt update -q=2 &> /dev/null
         logTrace "Installing CLI utilities"
+        __prep_eza
         for package in cmatrix eza bat ripgrep fd-find; do
             sudo apt install -y -q=2 -m "$package" 2> /dev/null
         done
