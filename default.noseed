@@ -9,98 +9,102 @@
 #-------------------------------------------------------------------------------
 # Perennials
 
-# package manager perennials
-
-## apt
+## APT
 #perennials/_apt
 
 ## Homebrew
 #perennials/_brew
 
-# fonts
-#perennials/fonts
-
-# macOS perennials
-
-## this perennial's functionality is needed for using Fig Tree in bash shells
+## Darwin (macOS)
 #perennials/darwin
 
-## window managers
+## fonts
+#perennials/fonts
+
+# Git
+#perennials/git
+
+## iTerm2
+#perennials/iterm2
+
+## Rectangle
 #perennials/rectangle
 
-## terminal emulators
+# SSH
+#perennials/ssh
+
+## macOS Terminal
 #perennials/terminal
-#perennials/iterm2
+
+# Vim
+#perennials/vim
 
 ## Xcode
 #perennials/xcode
-
-## Zsh compinit
-#perennials/zsh-compinit
-
-# Git perennials
-#perennials/git
-
-# SSH perennials
-#perennials/ssh
-
-# Vim perennials
-#perennials/vim
 
 
 #-------------------------------------------------------------------------------
 # Annuals
 
-# Oh My Zsh settings
+## Oh My Zsh
 #annuals/_oh-my-zsh
 
-# Homebrew
+## bat
+#annuals/bat
+
+## Homebrew
 #annuals/brew
 
-# Eza
-#annuals/eza
-
-# Exit alias
+# exit
 #annuals/exit
 
-# Golang
+## eza
+#annuals/eza
+
+## Golang
 #annuals/go
 
-# Shell history settings
+## Shell history
 #annuals/history
 
-# ip aliases
+## ip
 #annuals/ip
 
-# ls aliases
+## ls
 #annuals/ls
 
-# Meme aliases
+## Memes
 #annuals/meme
 
-# NVM alias
+## NVM
 #annuals/nvm
 
-# Persist alias
+## persist
 #annuals/persist
 
-# Shell prompt settings
+## Shell prompt
 #annuals/prompt
 
-# pwd alias
+## pwd
 #annuals/pwd
 
-# AppleShowAllFiles alias
+## pyenv
+#annuals/pyenv
+
+## Rust
+#annuals/rust
+
+## AppleShowAllFiles
 #annuals/show-files
 
-# Swift
+## Swift
 #annuals/swift
 
-# up alias
+## up
 #annuals/up
 
-# Vim
+## Vim
 #annuals/vim
 
-# Jump by word in terminal settings
+## Word jump
 #annuals/word-jump

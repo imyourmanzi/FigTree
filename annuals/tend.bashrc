@@ -21,8 +21,7 @@ function __fig() {
         cd "$FIG_HOME"
     elif [[ "$1" == "update" ]]; then
         if git -C "$FIG_HOME" diff --quiet; then
-            git -C "$FIG_HOME" pull
-            echo "Fig Tree has been updated"
+            git -C "$FIG_HOME" pull && echo "Fig Tree has been updated" && echo "Open a new shell for changes to take effect"
         else
             echo "Cannot update while there are changes to your local copy, please 'git stash' them first"
         fi
