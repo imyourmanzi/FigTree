@@ -48,7 +48,7 @@ if ! type brew &>/dev/null && type apt &> /dev/null; then
         sudo apt update -q=2 &> /dev/null
         logTrace "Installing CLI utilities"
         __prep_eza
-        for package in cmatrix eza bat ripgrep fd-find; do
+        for package in cmatrix eza bat ripgrep fd-find fzf; do
             sudo apt install -y -q=2 -m "$package" 2> /dev/null
         done
     else
