@@ -12,6 +12,6 @@ if type eza &> /dev/null; then
     __ezaIncludeGit="$({ eza --version | grep -q -- '+git' } && echo -n "--git")"
 
     alias ls="eza -F --color=auto --group-directories-first"
-    alias ll="eza -lbF --color=auto --group-directories-first --no-user --time=modified --time-style=iso $__ezaIncludeGit"
+    alias ll="eza -lbF --color=auto --group-directories-first --time=modified --time-style=iso $__ezaIncludeGit"
     alias la="eza -albghF --color=auto --group-directories-first --time=modified --time-style=iso $__ezaIncludeGit"
 fi
