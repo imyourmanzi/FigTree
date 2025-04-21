@@ -14,6 +14,7 @@ A command line configuration utility to ensure a consistent experience across ev
    1. `FIG_TRACE=true ~/.fig/plant` for even more detail
 
 1. Start a new shell to see it work
+
    1. Running `fig` will take you to your installation of Fig Tree
 
 1. Run `fig update` to pull latest changes from your upstream
@@ -36,7 +37,7 @@ If available, use [`bat`](https://github.com/sharkdp/bat) instead of `cat`.
 
 #### `exit`
 
-Simple alias of `x` to exit current shell session.  Ctrl-D might be faster for some but I've always liked single letter aliases.
+Simple alias of `x` to exit current shell session. Ctrl-D might be faster for some but I've always liked single letter aliases.
 
 #### Golang
 
@@ -65,7 +66,7 @@ Enjoy some silly SFW aliases.
 
 #### `nvm`
 
-Improvements I made to [`nvm`](https://github.com/nvm-sh/nvm).  Get the full details [here](https://www.notion.so/imyourmanzi/Faster-Shell-Starts-d312a841d5894605a021e13e4a762cd0?pvs=4#5f94be5b5b854e0d91a68244a2bc022c).
+Improvements I made to [`nvm`](https://github.com/nvm-sh/nvm). Get the full details [here](https://www.notion.so/imyourmanzi/Faster-Shell-Starts-d312a841d5894605a021e13e4a762cd0?pvs=4#5f94be5b5b854e0d91a68244a2bc022c).
 
 For your **.zshrc** file:
 
@@ -197,9 +198,9 @@ _May prompt you for input._
 
 A few [iTerm2](https://iterm2.com) profiles that might be handy and look cool.
 
-- Fig Tree Dark (Double Line): simple dark theme profile with some preselected Oh My Zsh themes that have two-line prompts (shortcut: Ctrl-Cmd-W)
-- Fig Tree Dark (Node): simple dark theme profile with some preselected Oh My Zsh themes that are handy for Node.js development (shortcut: Ctrl-Cmd-N)
-- Fig Tree Dark (Single Line): simple dark theme profile with some preselected Oh My Zsh themes that have one-line prompts (shortcut: Ctrl-Cmd-S)
+- Fig Tree (Double Line): simple profile with some preselected Oh My Zsh themes, light & dark mode colors from [Monokai Pro](https://monokai.pro/iterm), and macOS-style keybindings that have two-line prompts (shortcut: Ctrl-Cmd-W)
+- Fig Tree (Node): simple profile with some preselected Oh My Zsh themes, light & dark mode colors from [Monokai Pro](https://monokai.pro/iterm), and macOS-style keybindings that are handy for Node.js development (shortcut: Ctrl-Cmd-N)
+- Fig Tree (Single Line): simple profile with some preselected Oh My Zsh themes, light & dark mode colors from [Monokai Pro](https://monokai.pro/iterm), and macOS-style keybindings that have one-line prompts (shortcut: Ctrl-Cmd-S)
 
 #### Rectangle
 
@@ -211,7 +212,7 @@ My preferred defaults for [Rectangle](https://github.com/rxhanson/Rectangle).
 
 Default to using an ED25519 SSH key for `github.com`.
 
-#### macOS Terminal
+#### Terminal (macOS)
 
 Simple dark theme profile for the built-in macOS Terminal application.
 
