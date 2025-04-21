@@ -164,6 +164,7 @@ Packages installed:
 - bat (may be `batcat`, aliased to `cat`)
 - ripgrep (`rg`)
 - fd-find (`fdfind`)
+- fzf
 
 #### Homebrew
 
@@ -179,6 +180,7 @@ Packages installed:
 - btop
 - ripgrep (`rg`)
 - fd
+- fzf
 
 #### macOS
 
@@ -232,3 +234,49 @@ A variety of Xcode themes.
 - mzDefault: my default Xcode theme
 - Quiet Light: mimicking the VS Code built-in theme "Quiet Light"
 - Red: mimicking the VS Code built-in theme "Red"
+
+## Project Structure & Organization
+
+> [!WARNING]
+> Lots of extended analogies!
+
+### Where Configurations Live (Garden)
+
+The garden is a shell-specific file that is used to load mix-ins (see below) which is the central file that is called to load in pluggable configurations.
+
+The entire point of the garden is to be the construct that metaphorically holds the shell environment (soil) together.
+
+#### Shell Environment (Soil)
+
+The shell session's environment is the soil that exists to hold the annual and perennial seeds (configurations). Although shell sessions are removed and recreated, the analogy assumes that the soil is never actually removed.
+
+### Configurations (Seeds)
+
+There are different kinds of configurations that [Fig Tree](https://www.notion.so/Fig-Tree-43c30247eafb448da1f7130dcc97b04f?pvs=21) needs to support.
+
+- Perennials — Configurations that only need to be installed (i.e. planted) once and, while installed, will reference a resource in the `.fig` directory.
+  - The roots of perennial plants that survive in the earth throughout winter are akin to the configuration files that live in the `.fig` directory and get called upon when there is a link to them in the proper location for that configuration (usually somewhere in the user’s home directory). Also in this way, these configurations do not need to be re-instantiated by the shell every login.
+  - Each perennial includes a `provided.sh` file that accompanies it, which handles tasks like linking the perennial to its target directory and filename or otherwise handling the installation of the perennial.
+    - Perennial installation scripts are all written in `bash`, since they are only run during the `plant` script.
+  - To plant perennials, run the `plant` script, which will determine which perennials have already been planted and which still need to be planted.
+  - Example: `.vimrc` is a configuration file that `vim` reads from the user's `$HOME` directory. As a perennial, the file in the user's `$HOME` is actually a symbolic link to the actual `.vimrc` (the roots) in the `.fig/perennials/vim` directory.
+- Annuals — Configurations that live only within an actively logged in shell (must be an `interactive` shell instance) and thus need to have shell startup scripts that set them for each session.
+  - The seeds that annuals rely on dropping before winter to bloom in spring are similar to the shell commands run at the startup to guarantee the current session but do not make any assumptions about future sessions.
+  - Example: the `ll` alias is set in a `.bashrc` file that needs to run every time a new `bash` shell starts, otherwise the alias will not exist for that shell.
+  - Any pluggable feature that can be added to a shell configuration should live in an amendments directory that the `garden.*rc` file looks inside. Once in that directory, the `garden.*rc` can load those amendments, thus enriching the garden and benefiting the seeds in it.
+
+#### `.noseed` File
+
+The `plant` script can also read from a `.noseed` configuration file (`ignore`-style) that is a simple text file containing all of the seeds that should not be planted.
+
+The `bed.sh` file for perennials does not need to be ignored with the `.noseed` file because they are not treated as seeds.
+
+Supported file matching is that of `bash` glob pattern matching, for example:
+
+```bash
+ohmyzsh
+dir/ripgrep
+#vimrc <-- commented out, so it still gets planted
+```
+
+Every seed in the `perennials` and `annuals` will be planted unless it's in the `.noseed` file (and not commented out).
